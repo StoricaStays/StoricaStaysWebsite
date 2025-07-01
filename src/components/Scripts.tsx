@@ -44,36 +44,36 @@ export default function Scripts() {
       {/* Bootstrap JavaScript */}
       <Script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
 
-      {/* Animation and UI Libraries */}
+      {/* Animation and UI Libraries - Deferred */}
       <Script
         src="lib/wow/wow.min.js"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
       
       <Script
         src="lib/easing/easing.min.js"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
       
       <Script
         src="lib/waypoints/waypoints.min.js"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
       
       <Script
         src="lib/counterup/counterup.min.js"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
       
       <Script
         src="lib/owlcarousel/owl.carousel.min.js"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
 
-      {/* Date/Time Libraries */}
+      {/* Date/Time Libraries - Load in sequence */}
       <Script
         src="lib/tempusdominus/js/moment.min.js"
         strategy="afterInteractive"
@@ -86,17 +86,17 @@ export default function Scripts() {
       
       <Script
         src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
 
       {/* Template JavaScript - Load last to ensure all dependencies are loaded */}
       <Script
         src="js/main.js"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
 
       {/* Custom initialization script */}
-      <Script id="custom-init" strategy="afterInteractive">
+      <Script id="custom-init" strategy="lazyOnload">
         {`
           // Initialize components after all scripts are loaded
           document.addEventListener('DOMContentLoaded', function() {

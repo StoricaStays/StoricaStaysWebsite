@@ -1,3 +1,6 @@
+import Link from "next/link";
+import Image from "next/image";
+
 export default function Home() {
   return (
 <>
@@ -27,10 +30,14 @@ export default function Home() {
             >
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img
+                  <Image
                     className="w-100"
-                    src="img/hero-slider/CKC04015-HDR.jpg"
-                    alt="Image"
+                    src="/img/hero-slider/CKC04015-HDR.jpg"
+                    alt="Storica Stays Heritage Hostel"
+                    width={1920}
+                    height={1080}
+                    priority
+                    style={{objectFit: "cover"}}
                   />
                   <div
                     className="carousel-caption d-flex flex-column align-items-center justify-content-center"
@@ -51,10 +58,13 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img
+                  <Image
                     className="w-100"
-                    src="img/hero-slider/CKC03767.jpg"
-                    alt="Image"
+                    src="/img/hero-slider/CKC03767.jpg"
+                    alt="Heritage Architecture"
+                    width={1920}
+                    height={1080}
+                    style={{objectFit: "cover"}}
                   />
                   <div
                     className="carousel-caption d-flex flex-column align-items-center justify-content-center"
@@ -77,10 +87,13 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img
+                  <Image
                     className="w-100"
-                    src="img/hero-slider/CKC03841-HDR.jpg"
-                    alt="Image"
+                    src="/img/hero-slider/CKC03841-HDR.jpg"
+                    alt="Rooftop Restaurant View"
+                    width={1920}
+                    height={1080}
+                    style={{objectFit: "cover"}}
                   />
                   <div
                     className="carousel-caption d-flex flex-column align-items-center justify-content-center"
