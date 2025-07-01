@@ -2,7 +2,6 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-<>
         <div className="container-xxl bg-white p-0">
            {/* Spinner Start  */}
            {/* <div
@@ -205,7 +204,7 @@ export default function Home() {
                     About Us
                   </h6>
                   <h1 className="mb-4">
-                    Welcome to
+                    Welcome to{" "}
                     <span className="text-primary text-uppercase">Storica Stays</span>
                   </h1>
                   <p className="mb-4">
@@ -246,37 +245,49 @@ export default function Home() {
                       </div>
                     </div>
                   </div>  */}
-                  <a className="btn btn-primary py-3 px-5 mt-2" href="">Explore More</a>
+                  <button className="btn btn-primary py-3 px-5 mt-2" type="button">Explore More</button>
                 </div>
                 <div className="col-lg-6">
                   <div className="row g-3">
                     <div className="col-6 text-end">
-                      <img
+                      <Image
                         className="img-fluid rounded w-75 wow zoomIn"
                         data-wow-delay="0.1s"
-                        src="img/General/CKC03844-HDR.jpg"
+                        src="/img/General/CKC03844-HDR.jpg"
+                        alt="Heritage building exterior"
+                        width={400}
+                        height={300}
                         style={{marginTop: "25%"}}
                       />
                     </div>
                     <div className="col-6 text-start">
-                      <img
+                      <Image
                         className="img-fluid rounded w-100 wow zoomIn"
                         data-wow-delay="0.3s"
-                        src="img/General/CKC03886-HDR.jpg"
+                        src="/img/General/CKC03886-HDR.jpg"
+                        alt="Storica Stays interior courtyard"
+                        width={400}
+                        height={300}
                       />
                     </div>
                     <div className="col-6 text-end">
-                      <img
+                      <Image
                         className="img-fluid rounded w-100 wow zoomIn"
                         data-wow-delay="0.5s"
-                        src="img/General/CKC03983-HDR.jpg"
+                        src="/img/General/CKC03983-HDR.jpg"
+                        alt="Traditional architecture details"
+                        width={400}
+                        height={300}
                       />
                     </div>
                     <div className="col-6 text-start">
-                      <img
+                      <Image
                         className="img-fluid rounded w-75 wow zoomIn"
                         data-wow-delay="0.7s"
-                        src="img/General/CKC03907-HDR.jpg"
+                        src="/img/General/CKC03907-HDR.jpg"
+                        alt="Heritage hostel ambiance"
+                        width={400}
+                        height={300}
                       />
                     </div>
                   </div>
@@ -301,10 +312,12 @@ export default function Home() {
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                   <div className="room-item shadow rounded overflow-hidden">
                     <div className="position-relative">
-                      <img
+                      <Image
                         className="img-fluid"
-                        src="img/Heritage Room/IMG_4303.JPG"
-                        alt=""
+                        src="/img/Heritage Room/IMG_4303.JPG"
+                        alt="Heritage room interior"
+                        width={400}
+                        height={300}
                       />
                     </div>
                     <div className="p-4 mt-2">
@@ -328,12 +341,12 @@ export default function Home() {
                       </div>
     
                       <div className="d-flex justify-content-between">
-                        <a
+                        <button
                           className="btn btn-sm btn-primary rounded py-2 px-4"
-                          href=""
+                          type="button"
                           data-bs-toggle="modal"
                           data-bs-target="#room-heritage-Modal"
-                          >View Detail</a>
+                          >View Detail</button>
                         <a
                           className="btn btn-sm btn-dark rounded py-2 px-4"
                           href="tel:+91 6378365775"
@@ -345,10 +358,12 @@ export default function Home() {
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                   <div className="room-item shadow rounded overflow-hidden">
                     <div className="position-relative">
-                      <img
+                      <Image
                         className="img-fluid"
-                        src="img/DLX Double Bed/IMG_4115.JPG"
-                        alt=""
+                        src="/img/DLX Double Bed/IMG_4115.JPG"
+                        alt="Deluxe double room"
+                        width={400}
+                        height={300}
                       />
                     </div>
                     <div className="p-4 mt-2">
@@ -372,12 +387,12 @@ export default function Home() {
                       </div>
     
                       <div className="d-flex justify-content-between">
-                        <a
+                        <button
                           className="btn btn-sm btn-primary rounded py-2 px-4"
-                          href=""
+                          type="button"
                           data-bs-toggle="modal"
                           data-bs-target="#dlx-room-Modal"
-                          >View Detail</a>
+                          >View Detail</button>
                         <a
                           className="btn btn-sm btn-dark rounded py-2 px-4"
                           href="tel:+91 6378365775"
@@ -389,10 +404,12 @@ export default function Home() {
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
                   <div className="room-item shadow rounded overflow-hidden">
                     <div className="position-relative">
-                      <img
+                      <Image
                         className="img-fluid"
-                        src="img/4 Bed Dorm/IMG_3748.jpeg"
-                        alt=""
+                        src="/img/4 Bed Dorm/IMG_3748.jpeg"
+                        alt="4 bed dormitory"
+                        width={400}
+                        height={300}
                       />
                     </div>
                     <div className="p-4 mt-2">
@@ -416,12 +433,12 @@ export default function Home() {
                       </div>
     
                       <div className="d-flex justify-content-between">
-                        <a
+                        <button
                           className="btn btn-sm btn-primary rounded py-2 px-4"
-                          href=""
+                          type="button"
                           data-bs-toggle="modal"
                           data-bs-target="#bed-4-room-Modal"
-                          >View Detail</a>
+                          >View Detail</button>
                         <a
                           className="btn btn-sm btn-dark rounded py-2 px-4"
                           href="tel:+91 6378365775"
@@ -433,10 +450,12 @@ export default function Home() {
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
                   <div className="room-item shadow rounded overflow-hidden">
                     <div className="position-relative">
-                      <img
+                      <Image
                         className="img-fluid"
-                        src="img/8 Bed Dorm/IMG_3754.jpeg"
-                        alt=""
+                        src="/img/8 Bed Dorm/IMG_3754.jpeg"
+                        alt="8 bed dormitory"
+                        width={400}
+                        height={300}
                       />
                     </div>
                     <div className="p-4 mt-2">
@@ -460,13 +479,13 @@ export default function Home() {
                       </div>
     
                       <div className="d-flex justify-content-between">
-                        <a
+                        <button
                           className="btn btn-sm btn-primary rounded py-2 px-4"
-                          href=""
+                          type="button"
                           data-bs-toggle="modal"
                           data-src="https://www.youtube.com/embed/DWRcNpR6Kdc"
                           data-bs-target="#bed-8-room-model"
-                          >View Detail</a>
+                          >View Detail</button>
                         <a
                           className="btn btn-sm btn-dark rounded py-2 px-4"
                           href="tel:+91 6378365775"
@@ -478,10 +497,12 @@ export default function Home() {
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
                   <div className="room-item shadow rounded overflow-hidden">
                     <div className="position-relative">
-                      <img
+                      <Image
                         className="img-fluid"
-                        src="img/3 Bed Dorm/IMG_3612.jpg"
-                        alt=""
+                        src="/img/3 Bed Dorm/IMG_3612.jpg"
+                        alt="3 bed dormitory"
+                        width={400}
+                        height={300}
                       />
                     </div>
                     <div className="p-4 mt-2">
@@ -505,13 +526,13 @@ export default function Home() {
                       </div>
     
                       <div className="d-flex justify-content-between">
-                        <a
+                        <button
                           className="btn btn-sm btn-primary rounded py-2 px-4"
-                          href=""
+                          type="button"
                           data-bs-toggle="modal"
                           data-src="https://www.youtube.com/embed/DWRcNpR6Kdc"
                           data-bs-target="#bed-3-room-model"
-                          >View Detail</a>
+                          >View Detail</button>
                         <a
                           className="btn btn-sm btn-dark rounded py-2 px-4"
                           href="tel:+91 6378365775"
@@ -556,35 +577,35 @@ export default function Home() {
                           <img
                             className="w-100"
                             src="img/Heritage Room/IMG_4302.JPG"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/Heritage Room/IMG_4303.JPG"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item active">
                           <img
                             className="w-100"
                             src="img/Heritage Room/IMG_3589.jpeg"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/Heritage Room/IMG_4304.JPG"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/Heritage Room/IMG_4305.JPG"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                       </div>
@@ -652,49 +673,49 @@ export default function Home() {
                           <img
                             className="w-100"
                             src="img/DLX Double Bed/IMG_4020.PNG"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/DLX Double Bed/IMG_4111.JPG"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/DLX Double Bed/IMG_4112.JPG"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/DLX Double Bed/IMG_4113.JPG"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/DLX Double Bed/IMG_4115.JPG"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/DLX Double Bed/IMG_4116.JPG"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/DLX Double Bed/IMG_4121.JPG"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                       </div>
@@ -762,35 +783,35 @@ export default function Home() {
                           <img
                             className="w-100"
                             src="img/4 Bed Dorm/IMG_3746.jpeg"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/4 Bed Dorm/IMG_3748.jpeg"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/4 Bed Dorm/IMG_3749.jpeg"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/4 Bed Dorm/IMG_3750.jpeg"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/4 Bed Dorm/IMG_3752.jpeg"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                       </div>
@@ -858,49 +879,49 @@ export default function Home() {
                           <img
                             className="w-100"
                             src="img/8 Bed Dorm/IMG_3754.jpeg"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/8 Bed Dorm/IMG_3755.jpeg"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/8 Bed Dorm/IMG_3756.jpeg"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/8 Bed Dorm/IMG_3757.jpeg"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/8 Bed Dorm/IMG_3758.jpeg"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/8 Bed Dorm/IMG_3759.jpeg"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/8 Bed Dorm/IMG_4638.JPG"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                       </div>
@@ -968,21 +989,21 @@ export default function Home() {
                           <img
                             className="w-100"
                             src="img/3 Bed Dorm/IMG_3611.jpeg"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/3 Bed Dorm/IMG_3612.jpg"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                         <div className="carousel-item">
                           <img
                             className="w-100"
                             src="img/3 Bed Dorm/IMG_3614.jpg"
-                            alt="Image"
+                            alt=""
                           />
                         </div>
                       </div>
@@ -1121,15 +1142,18 @@ export default function Home() {
                     allowFullScreen={true}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
+                    title="Storica Stays Location Map"
                   ></iframe>
                 </div>
                 <div className="col-md-6">
                   <div className="wow fadeInUp" data-wow-delay="0.2s">
                     <div className="position-relative">
-                      <img
+                      <Image
                         className="img-fluid"
-                        src="img/General/CKC03792-HDR.jpg"
-                        alt=""
+                        src="/img/General/CKC03792-HDR.jpg"
+                        alt="Storica Stays heritage building"
+                        width={600}
+                        height={450}
                       />
                     </div>
                   </div>
@@ -1140,7 +1164,6 @@ export default function Home() {
            {/* Contact End  */}
     
         </div>
-        </>
     );
 
 }
