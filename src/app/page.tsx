@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
         <div className="container-xxl bg-white p-0">
@@ -28,13 +26,10 @@ export default function Home() {
             >
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <Image
+                  <img
                     className="w-100"
                     src="/img/hero-slider/CKC04015-HDR.jpg"
                     alt="Storica Stays Heritage Hostel"
-                    width={1920}
-                    height={1080}
-                    priority
                     style={{objectFit: "cover"}}
                   />
                   <div
@@ -56,12 +51,10 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <Image
+                  <img
                     className="w-100"
                     src="/img/hero-slider/CKC03767.jpg"
                     alt="Heritage Architecture"
-                    width={1920}
-                    height={1080}
                     style={{objectFit: "cover"}}
                   />
                   <div
@@ -85,12 +78,10 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <Image
+                  <img
                     className="w-100"
                     src="/img/hero-slider/CKC03841-HDR.jpg"
                     alt="Rooftop Restaurant View"
-                    width={1920}
-                    height={1080}
                     style={{objectFit: "cover"}}
                   />
                   <div
@@ -216,78 +207,41 @@ export default function Home() {
                     bedroom, designed to provide a peaceful oasis in the heart of
                     the city&apos;s vibrant old town.
                   </p>
-                   {/* <div className="row g-3 pb-4">
-                    <div className="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
-                      <div className="border rounded p-1">
-                        <div className="border rounded text-center p-4">
-                          <i className="fa fa-hotel fa-2x text-primary mb-2"></i>
-                          <h2 className="mb-1" data-toggle="counter-up">1234</h2>
-                          <p className="mb-0">Rooms</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
-                      <div className="border rounded p-1">
-                        <div className="border rounded text-center p-4">
-                          <i className="fa fa-users-cog fa-2x text-primary mb-2"></i>
-                          <h2 className="mb-1" data-toggle="counter-up">1234</h2>
-                          <p className="mb-0">Staffs</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
-                      <div className="border rounded p-1">
-                        <div className="border rounded text-center p-4">
-                          <i className="fa fa-users fa-2x text-primary mb-2"></i>
-                          <h2 className="mb-1" data-toggle="counter-up">1234</h2>
-                          <p className="mb-0">Clients</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>  */}
                   <button className="btn btn-primary py-3 px-5 mt-2" type="button">Explore More</button>
                 </div>
                 <div className="col-lg-6">
                   <div className="row g-3">
                     <div className="col-6 text-end">
-                      <Image
+                      <img
                         className="img-fluid rounded w-75 wow zoomIn"
                         data-wow-delay="0.1s"
                         src="/img/General/CKC03844-HDR.jpg"
                         alt="Heritage building exterior"
-                        width={400}
-                        height={300}
                         style={{marginTop: "25%"}}
                       />
                     </div>
                     <div className="col-6 text-start">
-                      <Image
+                      <img
                         className="img-fluid rounded w-100 wow zoomIn"
                         data-wow-delay="0.3s"
                         src="/img/General/CKC03886-HDR.jpg"
                         alt="Storica Stays interior courtyard"
-                        width={400}
-                        height={300}
                       />
                     </div>
                     <div className="col-6 text-end">
-                      <Image
+                      <img
                         className="img-fluid rounded w-100 wow zoomIn"
                         data-wow-delay="0.5s"
                         src="/img/General/CKC03983-HDR.jpg"
                         alt="Traditional architecture details"
-                        width={400}
-                        height={300}
                       />
                     </div>
                     <div className="col-6 text-start">
-                      <Image
+                      <img
                         className="img-fluid rounded w-75 wow zoomIn"
                         data-wow-delay="0.7s"
                         src="/img/General/CKC03907-HDR.jpg"
                         alt="Heritage hostel ambiance"
-                        width={400}
-                        height={300}
                       />
                     </div>
                   </div>
@@ -312,12 +266,10 @@ export default function Home() {
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                   <div className="room-item shadow rounded overflow-hidden">
                     <div className="position-relative">
-                      <Image
+                      <img
                         className="img-fluid"
                         src="/img/Heritage Room/IMG_4303.JPG"
                         alt="Heritage room interior"
-                        width={400}
-                        height={300}
                       />
                     </div>
                     <div className="p-4 mt-2">
@@ -358,12 +310,10 @@ export default function Home() {
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                   <div className="room-item shadow rounded overflow-hidden">
                     <div className="position-relative">
-                      <Image
+                      <img
                         className="img-fluid"
                         src="/img/DLX Double Bed/IMG_4115.JPG"
                         alt="Deluxe double room"
-                        width={400}
-                        height={300}
                       />
                     </div>
                     <div className="p-4 mt-2">
@@ -404,12 +354,10 @@ export default function Home() {
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
                   <div className="room-item shadow rounded overflow-hidden">
                     <div className="position-relative">
-                      <Image
+                      <img
                         className="img-fluid"
                         src="/img/4 Bed Dorm/IMG_3748.jpeg"
                         alt="4 bed dormitory"
-                        width={400}
-                        height={300}
                       />
                     </div>
                     <div className="p-4 mt-2">
@@ -450,12 +398,10 @@ export default function Home() {
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
                   <div className="room-item shadow rounded overflow-hidden">
                     <div className="position-relative">
-                      <Image
+                      <img
                         className="img-fluid"
                         src="/img/8 Bed Dorm/IMG_3754.jpeg"
                         alt="8 bed dormitory"
-                        width={400}
-                        height={300}
                       />
                     </div>
                     <div className="p-4 mt-2">
@@ -497,12 +443,10 @@ export default function Home() {
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
                   <div className="room-item shadow rounded overflow-hidden">
                     <div className="position-relative">
-                      <Image
+                      <img
                         className="img-fluid"
                         src="/img/3 Bed Dorm/IMG_3612.jpg"
                         alt="3 bed dormitory"
-                        width={400}
-                        height={300}
                       />
                     </div>
                     <div className="p-4 mt-2">
@@ -1148,12 +1092,10 @@ export default function Home() {
                 <div className="col-md-6">
                   <div className="wow fadeInUp" data-wow-delay="0.2s">
                     <div className="position-relative">
-                      <Image
+                      <img
                         className="img-fluid"
                         src="/img/General/CKC03792-HDR.jpg"
                         alt="Storica Stays heritage building"
-                        width={600}
-                        height={450}
                       />
                     </div>
                   </div>
