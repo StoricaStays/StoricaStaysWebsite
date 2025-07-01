@@ -76,9 +76,11 @@ export default function RoomCard({
         <div className="room-item shadow rounded overflow-hidden">
           <div className="position-relative">
             <img
-              className="img-fluid"
+            //   className="img-fluid"
               src={image}
               alt={alt}
+              width={407}
+              height={305}
             />
           </div>
           <div className="p-4 mt-2">
@@ -116,7 +118,7 @@ export default function RoomCard({
                 className="btn btn-sm btn-dark rounded py-2 px-4"
                 href={`tel:${phone}`}
               >
-                Book Now
+                Call Now
               </a>
             </div>
           </div>
