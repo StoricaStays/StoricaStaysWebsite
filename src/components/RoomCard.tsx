@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { trackCallNowClick, trackGalleryOpen } from '../utils/gtm';
 
 interface RoomCardProps {
   readonly title: string;
@@ -60,6 +61,8 @@ export default function RoomCard({
     if (lgInstanceRef.current) {
       lgInstanceRef.current.openGallery(0);
     }
+    // Track gallery open event
+    trackGalleryOpen('room_gallery', title);
   };
   return (
     <>
@@ -117,6 +120,13 @@ export default function RoomCard({
               <a
                 className="btn btn-sm btn-dark rounded py-2 px-4"
                 href={`tel:${phone}`}
+                data-gtm-event="call_now_click"
+                data-gtm-room-type={title}
+                data-gtm-phone={phone}
+                onClick={() => {
+                  // Track the call event with GTM
+                  trackCallNowClick(title, phone);
+                }}
               >
                 Call Now
               </a>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { trackInstagramReelPlay } from '../utils/gtm';
 
 interface InstagramReel {
   id: string;
@@ -59,6 +60,8 @@ const ReelCard = ({ reel }: ReelCardProps) => {
 
   const handleReelClick = () => {
     setShowModal(true);
+    // Track Instagram reel play event
+    trackInstagramReelPlay(reel.id, reel.caption);
   };
 
   const closeModal = () => {

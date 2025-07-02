@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
+import { trackGalleryOpen } from '../utils/gtm';
 
 interface PropertyGalleryProps {
   images?: string[];
@@ -71,6 +72,8 @@ const PropertyGallery = forwardRef<PropertyGalleryRef, PropertyGalleryProps>(
       if (lgInstanceRef.current) {
         lgInstanceRef.current.openGallery(0);
       }
+      // Track property gallery open event
+      trackGalleryOpen('property_gallery');
     };
 
     // Expose the openGallery function to parent components
