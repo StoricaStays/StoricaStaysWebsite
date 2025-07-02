@@ -2,6 +2,7 @@
 
 import RoomsSection from '../components/RoomsSection';
 import ReviewsSection from '../components/ReviewsSection';
+import InstagramSection from '../components/InstagramSection';
 import PropertyGallery, { PropertyGalleryRef } from '../components/PropertyGallery';
 import { useRef } from 'react';
 import Head from 'next/head';
@@ -268,6 +269,8 @@ export default function Home() {
            {/* About End  */}
     
            <RoomsSection />
+
+           <InstagramSection />
 
            <ReviewsSection />
     
