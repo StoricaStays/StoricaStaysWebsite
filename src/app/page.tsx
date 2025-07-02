@@ -1,8 +1,31 @@
+'use client';
+
 import RoomsSection from '../components/RoomsSection';
+import PropertyGallery, { PropertyGalleryRef } from '../components/PropertyGallery';
+import { useRef } from 'react';
+import Head from 'next/head';
 
 export default function Home() {
+  const propertyGalleryRef = useRef<PropertyGalleryRef>(null);
+
+  const openPropertyGallery = () => {
+    if (propertyGalleryRef.current) {
+      propertyGalleryRef.current.openGallery();
+    }
+  };
+
   return (
-        <div className="container-xxl bg-white p-0">
+    <>
+      <Head>
+        {/* LightGallery CSS */}
+        <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.9.0-beta.1/css/lightgallery.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.9.0-beta.1/css/lg-thumbnail.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.9.0-beta.1/css/lg-zoom.css" rel="stylesheet" />
+      </Head>
+
+      <PropertyGallery ref={propertyGalleryRef} />
+
+      <div className="container-xxl bg-white p-0">
            {/* Spinner Start  */}
            {/* <div
             id="spinner"
@@ -128,66 +151,7 @@ export default function Home() {
             </div>
           </div>
            {/* Carousel End  */}
-    
-           {/* Booking Start  */}
-           {/* <div
-            className="container-fluid booking pb-5 wow fadeIn"
-            data-wow-delay="0.1s"
-          >
-            <div className="container">
-              <div className="bg-white shadow" style={{padding: "35px"}}>
-                <div className="row g-2">
-                  <div className="col-md-10">
-                    <div className="row g-2">
-                      <div className="col-md-3">
-                        <div className="date" id="date1" data-target-input="nearest">
-                          <input
-                            type="text"
-                            className="form-control datetimepicker-input"
-                            placeholder="Check in"
-                            data-target="#date1"
-                            data-toggle="datetimepicker"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="date" id="date2" data-target-input="nearest">
-                          <input
-                            type="text"
-                            className="form-control datetimepicker-input"
-                            placeholder="Check out"
-                            data-target="#date2"
-                            data-toggle="datetimepicker"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <select className="form-select">
-                          <option selected>Adult</option>
-                          <option value="1">Adult 1</option>
-                          <option value="2">Adult 2</option>
-                          <option value="3">Adult 3</option>
-                        </select>
-                      </div>
-                      <div className="col-md-3">
-                        <select className="form-select">
-                          <option selected>Child</option>
-                          <option value="1">Child 1</option>
-                          <option value="2">Child 2</option>
-                          <option value="3">Child 3</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-2">
-                    <button className="btn btn-primary w-100">Submit</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>  */}
-           {/* Booking End  */}
-    
+     
            {/* About Start  */}
           <div className="container-xxl py-5" id="about">
             <div className="container">
@@ -209,42 +173,91 @@ export default function Home() {
                     bedroom, designed to provide a peaceful oasis in the heart of
                     the city&apos;s vibrant old town.
                   </p>
-                  <button className="btn btn-primary py-3 px-5 mt-2" type="button">Explore More</button>
+                  <button 
+                    className="btn btn-primary py-3 px-5 mt-2" 
+                    type="button"
+                    onClick={openPropertyGallery}
+                  >
+                    Property Images
+                  </button>
                 </div>
                 <div className="col-lg-6">
                   <div className="row g-3">
                     <div className="col-6 text-end">
-                      <img
-                        className="img-fluid rounded w-75 wow zoomIn"
-                        data-wow-delay="0.1s"
-                        src="/img/General/CKC03844-HDR.jpg"
-                        alt="Heritage building exterior"
-                        style={{marginTop: "25%"}}
-                      />
+                      <button
+                        type="button"
+                        className="p-0 border-0 bg-transparent img-fluid rounded w-75 wow zoomIn"
+                        style={{ marginTop: "25%" }}
+                        onClick={openPropertyGallery}
+                        aria-label="Open property gallery"
+                      >
+                        <img
+                          className="img-fluid rounded w-100"
+                          data-wow-delay="0.1s"
+                          src="/img/General/CKC03844-HDR.jpg"
+                          alt="Heritage building exterior"
+                          style={{ pointerEvents: "none" }}
+                          tabIndex={-1}
+                          aria-hidden="true"
+                        />
+                      </button>
                     </div>
                     <div className="col-6 text-start">
-                      <img
-                        className="img-fluid rounded w-100 wow zoomIn"
+                      <button
+                        type="button"
+                        className="p-0 border-0 bg-transparent img-fluid rounded w-100 wow zoomIn"
                         data-wow-delay="0.3s"
-                        src="/img/General/CKC03886-HDR.jpg"
-                        alt="Storica Stays interior courtyard"
-                      />
+                        onClick={openPropertyGallery}
+                        aria-label="Open property gallery"
+                        style={{ display: "inline-block" }}
+                      >
+                        <img
+                          className="img-fluid rounded w-100"
+                          src="/img/General/CKC03886-HDR.jpg"
+                          alt="Storica Stays interior courtyard"
+                          style={{ pointerEvents: "none" }}
+                          tabIndex={-1}
+                          aria-hidden="true"
+                        />
+                      </button>
                     </div>
                     <div className="col-6 text-end">
-                      <img
-                        className="img-fluid rounded w-100 wow zoomIn"
+                      <button
+                        type="button"
+                        className="p-0 border-0 bg-transparent img-fluid rounded w-100 wow zoomIn"
                         data-wow-delay="0.5s"
-                        src="/img/General/CKC03983-HDR.jpg"
-                        alt="Traditional architecture details"
-                      />
+                        onClick={openPropertyGallery}
+                        aria-label="Open property gallery"
+                        style={{ display: "inline-block" }}
+                      >
+                        <img
+                          className="img-fluid rounded w-100"
+                          src="/img/General/CKC03983-HDR.jpg"
+                          alt="Traditional architecture details"
+                          style={{ pointerEvents: "none" }}
+                          tabIndex={-1}
+                          aria-hidden="true"
+                        />
+                      </button>
                     </div>
                     <div className="col-6 text-start">
-                      <img
-                        className="img-fluid rounded w-75 wow zoomIn"
+                      <button
+                        type="button"
+                        className="p-0 border-0 bg-transparent img-fluid rounded w-75 wow zoomIn"
                         data-wow-delay="0.7s"
-                        src="/img/General/CKC03907-HDR.jpg"
-                        alt="Heritage hostel ambiance"
-                      />
+                        onClick={openPropertyGallery}
+                        aria-label="Open property gallery"
+                        style={{ display: "inline-block" }}
+                      >
+                        <img
+                          className="img-fluid rounded w-100"
+                          src="/img/General/CKC03907-HDR.jpg"
+                          alt="Heritage hostel ambiance"
+                          style={{ pointerEvents: "none" }}
+                          tabIndex={-1}
+                          aria-hidden="true"
+                        />
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -378,6 +391,7 @@ export default function Home() {
            {/* Contact End  */}
     
         </div>
+      </>
     );
 
 }

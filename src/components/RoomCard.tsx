@@ -112,7 +112,7 @@ export default function RoomCard({
                 type="button"
                 onClick={openGallery}
               >
-                View Gallery
+                Room Images
               </button>
               <a
                 className="btn btn-sm btn-dark rounded py-2 px-4"
