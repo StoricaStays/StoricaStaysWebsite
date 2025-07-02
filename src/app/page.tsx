@@ -27,25 +27,8 @@ export default function Home() {
 
       <PropertyGallery ref={propertyGalleryRef} />
 
-      <div className="container-xxl bg-white p-0">
-           {/* Spinner Start  */}
-           {/* <div
-            id="spinner"
-            className="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
-          >
-            <div
-              className="spinner-border text-primary"
-              style={{width: "3rem", height: "3rem"}}
-              role="status"
-            >
-              <span className="sr-only">Loading...</span>
-            </div>
-          </div>  */}
-           {/* Spinner End  */}
-    
-    
            {/* Carousel Start  */}
-          <div className="container-fluid p-0 mb-5">
+           <div className="container-fluid p-0 mb-5">
             <div
               id="header-carousel"
               className="carousel slide"
@@ -153,6 +136,23 @@ export default function Home() {
             </div>
           </div>
            {/* Carousel End  */}
+      <div className="container-xxl bg-white p-0">
+           {/* Spinner Start  */}
+           {/* <div
+            id="spinner"
+            className="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+          >
+            <div
+              className="spinner-border text-primary"
+              style={{width: "3rem", height: "3rem"}}
+              role="status"
+            >
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>  */}
+           {/* Spinner End  */}
+    
+
      
            {/* About Start  */}
           <div className="container-xxl py-5" id="about">
