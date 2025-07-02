@@ -92,3 +92,73 @@ export const trackInstagramReelPlay = (
     value: 1,
   });
 };
+
+/**
+ * Track phone number clicks
+ * @param phoneNumber - The phone number being called
+ * @param location - Where the click occurred (header, footer, floating, etc.)
+ */
+export const trackPhoneClick = (
+  phoneNumber: string,
+  location: string
+): void => {
+  trackGTMEvent({
+    event: "phone_click",
+    event_category: "contact",
+    event_label: location,
+    phone_number: phoneNumber,
+    click_location: location,
+    value: 1,
+  });
+};
+
+/**
+ * Track WhatsApp clicks
+ * @param phoneNumber - The WhatsApp number
+ * @param location - Where the click occurred (header, footer, floating, etc.)
+ */
+export const trackWhatsAppClick = (
+  phoneNumber: string,
+  location: string
+): void => {
+  trackGTMEvent({
+    event: "whatsapp_click",
+    event_category: "contact",
+    event_label: location,
+    phone_number: phoneNumber,
+    click_location: location,
+    value: 1,
+  });
+};
+
+/**
+ * Track email clicks
+ * @param email - The email address
+ * @param location - Where the click occurred (header, footer, etc.)
+ */
+export const trackEmailClick = (email: string, location: string): void => {
+  trackGTMEvent({
+    event: "email_click",
+    event_category: "contact",
+    event_label: location,
+    email_address: email,
+    click_location: location,
+    value: 1,
+  });
+};
+
+/**
+ * Track social media clicks
+ * @param platform - The social platform (instagram, facebook, etc.)
+ * @param location - Where the click occurred (header, footer, etc.)
+ */
+export const trackSocialClick = (platform: string, location: string): void => {
+  trackGTMEvent({
+    event: "social_click",
+    event_category: "social_engagement",
+    event_label: platform,
+    social_platform: platform,
+    click_location: location,
+    value: 1,
+  });
+};
