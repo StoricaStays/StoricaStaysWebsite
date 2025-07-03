@@ -96,6 +96,6 @@ All phone numbers, WhatsApp links, email addresses, and social media links acros
 - `src/utils/gtm.ts` - Core tracking functions
 - `src/components/ClientLayout.tsx` - Client component with event handlers
 - `src/app/layout.tsx` - Server component wrapping ClientLayout
-- `src/components/RoomCard.tsx` - Room booking navigation tracking
+- `src/components/RoomCard.tsx` - Room-specific tracking
 
-All contact interactions and booking navigation are now comprehensively tracked and ready for GTM configuration!
+All contact interactions are now comprehensively tracked and ready for GTM configuration!
