@@ -91,8 +91,6 @@ const rooms: Room[] = [
 ];
 
 export default function RoomsSection() {
-  const phone = '+91 6378365775';
-
   return (
     <>
       {/* Room Start */}
@@ -117,7 +115,6 @@ export default function RoomsSection() {
                 bathCount={room.bathCount}
                 galleryImages={room.galleryImages}
                 delay={room.delay}
-                phone={phone}
               />
             ))}
           </div>

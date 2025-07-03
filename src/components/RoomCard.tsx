@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { trackCallNowClick, trackGalleryOpen } from '../utils/gtm';
+import { trackBookingInteraction, trackGalleryOpen } from '../utils/gtm';
 
 interface RoomCardProps {
   readonly title: string;
@@ -11,7 +11,6 @@ interface RoomCardProps {
   readonly bathCount: number;
   readonly galleryImages: string[];
   readonly delay: string;
-  readonly phone: string;
 }
 
 export default function RoomCard({
@@ -21,8 +20,7 @@ export default function RoomCard({
   bedCount,
   bathCount,
   galleryImages,
-  delay,
-  phone
+  delay
 }: RoomCardProps) {
   const galleryRef = useRef<HTMLDivElement>(null);
   const lgInstanceRef = useRef<any>(null); // eslint-disable-line @typescript-eslint/no-explicit-any
@@ -119,16 +117,16 @@ export default function RoomCard({
               </button>
               <a
                 className="btn btn-sm btn-dark rounded py-2 px-4"
-                href={`tel:${phone}`}
-                data-gtm-event="call_now_click"
+                href="/book"
+                data-gtm-event="booking_click"
                 data-gtm-room-type={title}
-                data-gtm-phone={phone}
+                data-gtm-source="room_card"
                 onClick={() => {
-                  // Track the call event with GTM
-                  trackCallNowClick(title, phone);
+                  // Track the booking navigation event with GTM
+                  trackBookingInteraction('navigate_to_booking', `room_card_${title}`);
                 }}
               >
-                Call Now
+                Book Now
               </a>
             </div>
           </div>
