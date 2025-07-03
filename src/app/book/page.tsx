@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import BookingContact from "../../components/BookingContact";
+import BookingIframe from "../../components/BookingIframe";
+import "./booking.css";
 
 export const metadata: Metadata = {
   title: "Book Your Stay - Storica Stays Heritage Hostel",
@@ -28,25 +30,39 @@ export default function BookPage() {
           {/* Booking iframe */}
           <div className="row justify-content-center">
             <div className="col-lg-12">
-              <div className="booking-frame-container" style={{ 
+              <div className="booking-frame-container position-relative" style={{ 
                 border: '1px solid #ddd', 
                 borderRadius: '8px', 
                 overflow: 'hidden',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                background: '#f8f9fa'
               }}>
-                <iframe
+                {/* Loading indicator */}
+                <div 
+                  id="iframe-loader"
+                  className="position-absolute top-50 start-50 translate-middle text-center"
+                  style={{ zIndex: 10 }}
+                >
+                  <div className="spinner-border text-primary" style={{ width: '3rem', height: '3rem' }} aria-label="Loading booking system">
+                    <span className="visually-hidden">Loading booking system...</span>
+                  </div>
+                  <p className="mt-3 text-muted">Loading secure booking system...</p>
+                </div>
+                
+                <BookingIframe
                   src="https://bookings.asiatech.in/?page=8296&type=website"
                   width="100%"
                   height="1000"
-                  frameBorder="0"
                   title="Storica Stays Booking System"
                   style={{ 
                     minHeight: '800px',
-                    border: 'none'
+                    border: 'none',
+                    opacity: 0,
+                    transition: 'opacity 0.3s ease'
                   }}
                   allow="payment; fullscreen"
                   loading="lazy"
-                ></iframe>
+                />
               </div>
             </div>
           </div>
