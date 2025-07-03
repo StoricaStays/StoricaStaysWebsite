@@ -29,6 +29,11 @@ All phone numbers, WhatsApp links, email addresses, and social media links acros
 
 - ✅ **Call Now**: Room-specific buttons → `call_now_click` (includes room type)
 
+#### **Booking Page:**
+
+- ✅ **Phone**: Help section button → `phone_click` (location: "booking_page")
+- ✅ **WhatsApp**: Help section button → `whatsapp_click` (location: "booking_page")
+
 ### **Event Categories:**
 
 - **`contact`**: Phone, WhatsApp, and email clicks from layout

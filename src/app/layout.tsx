@@ -35,7 +35,7 @@ export default function RootLayout({
         <meta content="Experience the charm of heritage at Storica Stays, your ideal hostel and rooftop restaurant." name="description" />
 
         {/* Favicon */}
-        <link href="img/favicon.ico" rel="icon" />
+        <link href="/img/favicon.ico" rel="icon" />
     
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,8 +44,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     
         {/* Critical CSS only */}
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/style.css" rel="stylesheet" />
+        <link href="/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/css/style.css" rel="stylesheet" />
         
         {/* LightGallery CSS */}
         <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.9.0-beta.1/css/lightgallery.css" rel="stylesheet" />

@@ -37,15 +37,15 @@ export default function AsyncCSS() {
 
     // Load animation and component libraries
     setTimeout(() => {
-      loadCSS('lib/animate/animate.min.css');
+      loadCSS('/lib/animate/animate.min.css');
     }, 150);
 
     setTimeout(() => {
-      loadCSS('lib/owlcarousel/assets/owl.carousel.min.css');
+      loadCSS('/lib/owlcarousel/assets/owl.carousel.min.css');
     }, 200);
 
     setTimeout(() => {
-      loadCSS('lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css');
+      loadCSS('/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css');
     }, 250);
 
   }, []);

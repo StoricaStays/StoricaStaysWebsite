@@ -162,3 +162,22 @@ export const trackSocialClick = (platform: string, location: string): void => {
     value: 1,
   });
 };
+
+/**
+ * Track booking page interactions
+ * @param action - The booking action (view, start, complete, etc.)
+ * @param location - Where the interaction occurred (booking_page, iframe, etc.)
+ */
+export const trackBookingInteraction = (
+  action: string,
+  location: string
+): void => {
+  trackGTMEvent({
+    event: "booking_interaction",
+    event_category: "booking",
+    event_label: action,
+    booking_action: action,
+    click_location: location,
+    value: 1,
+  });
+};

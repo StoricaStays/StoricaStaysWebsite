@@ -49,49 +49,49 @@ export default function Scripts() {
 
       {/* Animation and UI Libraries - Deferred */}
       <Script
-        src="lib/wow/wow.min.js"
+        src="/lib/wow/wow.min.js"
         strategy="lazyOnload"
       />
 
       <Script
-        src="lib/easing/easing.min.js"
+        src="/lib/easing/easing.min.js"
         strategy="lazyOnload"
       />
 
       <Script
-        src="lib/waypoints/waypoints.min.js"
+        src="/lib/waypoints/waypoints.min.js"
         strategy="lazyOnload"
       />
 
       <Script
-        src="lib/counterup/counterup.min.js"
+        src="/lib/counterup/counterup.min.js"
         strategy="lazyOnload"
       />
 
       <Script
-        src="lib/owlcarousel/owl.carousel.min.js"
+        src="/lib/owlcarousel/owl.carousel.min.js"
         strategy="lazyOnload"
       />
 
       {/* Date/Time Libraries - Load in sequence */}
       <Script
-        src="lib/tempusdominus/js/moment.min.js"
+        src="/lib/tempusdominus/js/moment.min.js"
         strategy="afterInteractive"
       />
 
       <Script
-        src="lib/tempusdominus/js/moment-timezone.min.js"
+        src="/lib/tempusdominus/js/moment-timezone.min.js"
         strategy="afterInteractive"
       />
 
       <Script
-        src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"
+        src="/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"
         strategy="lazyOnload"
       />
 
       {/* Template JavaScript - Load last to ensure all dependencies are loaded */}
       <Script
-        src="js/main.js"
+        src="/js/main.js"
         strategy="lazyOnload"
       />
 

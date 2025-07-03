@@ -83,6 +83,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
                   <Link href="/" className="nav-item nav-link">Home</Link>
                   <Link href="/about" className="nav-item nav-link">About</Link>
                   <Link href="/#Rooms" className="nav-item nav-link">Rooms</Link>
+                  <Link href="/book" className="nav-item nav-link">Book Now</Link>
                   <Link href="/#Contact" className="nav-item nav-link">Contact</Link>
                 </div>
               </div>

@@ -54,7 +54,7 @@ export default function Home() {
                         className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
                       >Our Rooms</a>
                       <a
-                        href="tel:+91 6378365775"
+                        href="/book"
                         className="btn btn-light py-md-3 px-md-5 animated slideInRight"
                       >Book A Room</a>
                     </div>
@@ -80,7 +80,7 @@ export default function Home() {
                         >Our Rooms</a
                       >
                       <a
-                        href="tel:+91 6378365775"
+                        href="/book"
                         className="btn btn-light py-md-3 px-md-5 animated slideInRight"
                         >Book A Room</a
                       >
@@ -107,7 +107,7 @@ export default function Home() {
                         >Our Rooms</a
                       >
                       <a
-                        href="tel:+91 6378365775"
+                       href="/book"
                         className="btn btn-light py-md-3 px-md-5 animated slideInRight"
                         >Book A Room</a
                       >
