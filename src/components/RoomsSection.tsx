@@ -17,7 +17,7 @@ const rooms: Room[] = [
     title: 'Superior Heritage',
     image: '/img/Heritage Room/IMG_4303.JPG',
     alt: 'Heritage room interior',
-    bedCount: 3,
+    bedCount: 2,
     bathCount: 1,
     galleryImages: [
       '/img/Heritage Room/IMG_4302.JPG',
@@ -27,12 +27,30 @@ const rooms: Room[] = [
     ],
     delay: '0.1s'
   },
+    {
+    id: 'heritage2',
+    title: 'Superior Heritage 2',
+    image: '/img/heritage_room_2/thumbnail.jpeg',
+    alt: 'Heritage room interior',
+    bedCount: 2,
+    bathCount: 1,
+    galleryImages: [
+      '/img/heritage_room_2/Heritage room (1).jpeg',
+      '/img/heritage_room_2/Heritage room (2).jpeg',
+      '/img/heritage_room_2/Heritage room (3).jpeg',
+      '/img/heritage_room_2/Heritage room (4).jpeg',
+      '/img/heritage_room_2/Heritage room (5).jpeg',
+      '/img/heritage_room_2/Heritage room (6).jpeg',
+      '/img/heritage_room_2/IMG_3589.jpeg',
+    ],
+    delay: '0.1s'
+  },
   {
     id: 'dlx-double',
     title: 'Deluxe Double Room',
     image: '/img/DLX Double Bed/IMG_4115.JPG',
     alt: 'Deluxe double room',
-    bedCount: 3,
+    bedCount: 2,
     bathCount: 1,
     galleryImages: [
       '/img/DLX Double Bed/IMG_4111.JPG',
