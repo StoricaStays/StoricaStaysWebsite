@@ -158,7 +158,7 @@ export default function ReviewsSection() {
                   <div className="col-md-6">
                     <h4 className="text-white mb-2">Excellent Rating</h4>
                     <p className="text-white mb-0">
-                      Based on 150+ verified guest reviews across multiple platforms
+                      Based on 200+ verified guest reviews across multiple platforms
                     </p>
                   </div>
                   <div className="col-md-3">
