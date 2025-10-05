@@ -170,7 +170,7 @@ export default function Home() {
                     Nestled amidst the timeless beauty of Jodhpur, Storica Stays
                     invites you to experience an unforgettable journey. With
                     stunning fort views from its rooftop restaurant, this heritage
-                    backpacker hostel promises a unique blend of comfort and
+                    hotel promises a unique blend of comfort and
                     adventure. Discover cosy dormitory rooms and a private double
                     bedroom, designed to provide a peaceful oasis in the heart of
                     the city&apos;s vibrant old town.

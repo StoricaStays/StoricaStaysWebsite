@@ -167,12 +167,10 @@ export default function Home() {
                     <span className="text-primary text-uppercase">Storica Stays</span>
                   </h1>
                   <p className="mb-4">
-                    Nestled amidst the timeless beauty of Jodhpur, Storica Stays
+                    Nestled amidst the timeless beauty of Udaipur, Storica Stays
                     invites you to experience an unforgettable journey. With
-                    stunning fort views from its rooftop restaurant, this heritage
-                    backpacker hostel promises a unique blend of comfort and
-                    adventure. Discover cosy dormitory rooms and a private double
-                    bedroom, designed to provide a peaceful oasis in the heart of
+                    stunning lake views from its rooftop restaurant, this heritage
+                    hotel promises a unique blend of comfort. Discover cosy rooms, designed to provide a peaceful oasis in the heart of
                     the city&apos;s vibrant old town.
                   </p>
                   <button 
