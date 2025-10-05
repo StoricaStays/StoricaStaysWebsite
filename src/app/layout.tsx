@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Storica Stays - Heritage Hostel and Rooftop Restaurant",
-  description: "Experience the charm of heritage at Storica Stays, your ideal hostel and rooftop restaurant.",
+  title: "Storica Stays - Heritage Boutique Comfort and Rooftop Restaurant",
+  description: "Experience the charm of heritage at Storica Stays, your ideal Stay and rooftop restaurant.",
 };
 
 export default function RootLayout({
@@ -32,7 +32,7 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <meta content="Hostel,Restaurant,Room,Hotel" name="keywords" />
-        <meta content="Experience the charm of heritage at Storica Stays, your ideal hostel and rooftop restaurant." name="description" />
+        <meta content="Experience the charm of heritage at Storica Stays, your ideal Stay and rooftop restaurant." name="description" />
 
         {/* Favicon */}
         <link href="/img/favicon.ico" rel="icon" />
