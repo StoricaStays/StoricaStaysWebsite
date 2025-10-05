@@ -106,7 +106,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
               <div className="bg-primary rounded p-4">
                 <Link href="/"><h1 className="text-white text-uppercase mb-3">Storica Stays</h1></Link>
                 <p className="text-white mb-0">
-                  Experience the heritage and hospitality of Jodhpur at Storica Stays.
+                  Experience the heritage and hospitality of Jodhpur and Udaipur at Storica Stays.
                   Your gateway to the Blue City&apos;s rich culture and history.
                 </p>
               </div>
@@ -118,8 +118,8 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
                 Contact
               </h6>
               <p className="mb-2">
-                <i className="fa fa-map-marker-alt me-3"></i>Toorji Ka Jhalra,
-                Jodhpur, Rajasthan
+                <i className="fa fa-map-marker-alt me-3"></i>
+                Jodhpur and Udaipur, Rajasthan
               </p>
               <p className="mb-2">
                 <i className="fa fa-phone-alt me-3"></i>

@@ -326,17 +326,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="col-md-6 wow fadeIn" data-wow-delay="0.1s">
-                   {/*                  <iframe
-                    className="position-relative rounded w-100 h-100"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                    frameBorder="0"
-                    style={{minHeight: "350px", border: "0"}}
-                    allowFullScreen=""
-                    aria-hidden="false"
-                    tabIndex={0}
-                  ></iframe>*/}
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3576.877455430147!2d73.02044147618096!3d26.29807238623277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418d00351ddf83%3A0xef89956f3c6c3ae5!2sStorica%20Stays!5e0!3m2!1sen!2sin!4v1741427350058!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4606.18498613014!2d73.6798072!3d24.580343199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e55307487f89%3A0x5d7795af4a3bb20b!2shotel%20panorama%20haveli!5e1!3m2!1sen!2sin!4v1759651246065!5m2!1sen!2sin"
                     className="w-100 w-sm-auto"
                     width="600"
                     height="450"
