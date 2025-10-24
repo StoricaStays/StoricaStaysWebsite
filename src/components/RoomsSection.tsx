@@ -75,36 +75,6 @@ const rooms: Room[] = [
       '/img/4 Bed Dorm/IMG_3752.jpeg'
     ],
     delay: '0.6s'
-  },
-  {
-    id: '8-bed-dorm',
-    title: '8 Bed Dorm',
-    image: '/img/8 Bed Dorm/IMG_3754.jpeg',
-    alt: '8 bed dormitory',
-    bedCount: 8,
-    bathCount: 1,
-    galleryImages: [
-      '/img/8 Bed Dorm/IMG_3755.jpeg',
-      '/img/8 Bed Dorm/IMG_3756.jpeg',
-      '/img/8 Bed Dorm/IMG_3757.jpeg',
-      '/img/8 Bed Dorm/IMG_3759.jpeg',
-      '/img/8 Bed Dorm/IMG_4638.JPG'
-    ],
-    delay: '0.6s'
-  },
-  {
-    id: '3-bed-dorm',
-    title: '3 Bed Dorm',
-    image: '/img/3 Bed Dorm/IMG_3612.jpg',
-    alt: '3 bed dormitory',
-    bedCount: 3,
-    bathCount: 1,
-    galleryImages: [
-      '/img/3 Bed Dorm/IMG_3611.jpeg',
-      '/img/3 Bed Dorm/IMG_3612.jpg',
-      '/img/3 Bed Dorm/IMG_3614.jpg'
-    ],
-    delay: '0.6s'
   }
 ];
 
