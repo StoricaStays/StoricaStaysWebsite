@@ -13,11 +13,11 @@ import { udaipurRooms } from '@/data/rooms';
 export default function UdaipurPage() {
   const propertyGalleryRef = useRef<PropertyGalleryRef>(null);
 
-  const openPropertyGallery = () => {
-    if (propertyGalleryRef.current) {
-      propertyGalleryRef.current.openGallery();
-    }
-  };
+  // const openPropertyGallery = () => {
+  //   if (propertyGalleryRef.current) {
+  //     propertyGalleryRef.current.openGallery();
+  //   }
+  // };
 
   return (
     <>
