@@ -1,0 +1,218 @@
+// Room data types and configurations
+
+export interface Room {
+  id: string;
+  title: string;
+  image: string;
+  alt: string;
+  bedCount: number;
+  bathCount: number;
+  galleryImages: string[];
+  delay: string;
+}
+
+// Main rooms configuration
+export const jodhpurRooms: Room[] = [
+  {
+    id: "heritage",
+    title: "Superior Heritage",
+    image: "/img/Heritage Room/IMG_4303.JPG",
+    alt: "Heritage room interior",
+    bedCount: 2,
+    bathCount: 1,
+    galleryImages: [
+      "/img/Heritage Room/IMG_4302.JPG",
+      "/img/Heritage Room/IMG_3589.jpeg",
+      "/img/Heritage Room/IMG_4304.JPG",
+      "/img/Heritage Room/IMG_4305.JPG",
+    ],
+    delay: "0.1s",
+  },
+  {
+    id: "heritage2",
+    title: "Superior Heritage 2",
+    image: "/img/heritage_room_2/thumbnail.jpeg",
+    alt: "Heritage room interior",
+    bedCount: 2,
+    bathCount: 1,
+    galleryImages: [
+      "/img/heritage_room_2/Heritage room (1).jpeg",
+      "/img/heritage_room_2/Heritage room (2).jpeg",
+      "/img/heritage_room_2/Heritage room (3).jpeg",
+      "/img/heritage_room_2/Heritage room (4).jpeg",
+      "/img/heritage_room_2/Heritage room (5).jpeg",
+      "/img/heritage_room_2/Heritage room (6).jpeg",
+      "/img/heritage_room_2/IMG_3589.jpeg",
+    ],
+    delay: "0.2s",
+  },
+  {
+    id: "dlx-double",
+    title: "Deluxe Double Room",
+    image: "/img/DLX Double Bed/IMG_4115.JPG",
+    alt: "Deluxe double room",
+    bedCount: 2,
+    bathCount: 1,
+    galleryImages: [
+      "/img/DLX Double Bed/IMG_4111.JPG",
+      "/img/DLX Double Bed/IMG_4112.JPG",
+      "/img/DLX Double Bed/IMG_4113.JPG",
+      "/img/DLX Double Bed/IMG_4116.JPG",
+      "/img/DLX Double Bed/IMG_4121.JPG",
+    ],
+    delay: "0.3s",
+  },
+  {
+    id: "4-bed-dorm",
+    title: "4 Bed Dorm",
+    image: "/img/4 Bed Dorm/IMG_3748.jpeg",
+    alt: "4 bed dormitory",
+    bedCount: 4,
+    bathCount: 1,
+    galleryImages: [
+      "/img/4 Bed Dorm/IMG_3746.jpeg",
+      "/img/4 Bed Dorm/IMG_3749.jpeg",
+      "/img/4 Bed Dorm/IMG_3750.jpeg",
+      "/img/4 Bed Dorm/IMG_3752.jpeg",
+    ],
+    delay: "0.4s",
+  },
+];
+
+// Main rooms configuration
+export const udaipurRooms: Room[] = [
+  {
+    id: "heritage",
+    title: "Superior Heritage",
+    image: "/img/udaipur/rooms/superior heritage/room (1).jpg",
+    alt: "Heritage room interior",
+    bedCount: 2,
+    bathCount: 1,
+    galleryImages: [
+      "/img/udaipur/rooms/superior heritage/room (1).jpg",
+      "/img/udaipur/rooms/superior heritage/room (2).jpg",
+      "/img/udaipur/rooms/superior heritage/room (3).jpg",
+      "/img/udaipur/rooms/superior heritage/room (4).jpg",
+      "/img/udaipur/rooms/superior heritage/room (5).jpg",
+      "/img/udaipur/rooms/superior heritage/room (6).jpg",
+      "/img/udaipur/rooms/superior heritage/room (7).jpg",
+    ],
+    delay: "0.1s",
+  },
+  {
+    id: "super-deluxe-lake-view",
+    title: "Super Deluxe Lake View",
+    image: "/img/udaipur/rooms/super deluxe lake view/room (1).jpg",
+    alt: "Super Deluxe Lake View room interior",
+    bedCount: 2,
+    bathCount: 1,
+    galleryImages: [
+      "/img/udaipur/rooms/super deluxe lake view/room (1).jpg",
+      "/img/udaipur/rooms/super deluxe lake view/room (2).jpg",
+      "/img/udaipur/rooms/super deluxe lake view/room (3).jpg",
+    ],
+    delay: "0.1s",
+  },
+  {
+    id: "triple-bed",
+    title: "triple bed",
+    image: "/img/udaipur/rooms/triple bed/room (1).jpg",
+    alt: "Triple bed room interior",
+    bedCount: 2,
+    bathCount: 1,
+    galleryImages: [
+      "/img/udaipur/rooms/triple bed/room (1).jpg",
+      "/img/udaipur/rooms/triple bed/room (2).jpg",
+      "/img/udaipur/rooms/triple bed/room (3).jpg",
+      "/img/udaipur/rooms/triple bed/room (4).jpg",
+    ],
+    delay: "0.1s",
+  },
+  {
+    id: "standard-room",
+    title: "Standard Room",
+    image: "/img/udaipur/rooms/standard room/room (1).jpg",
+    alt: "Standard room interior",
+    bedCount: 2,
+    bathCount: 1,
+    galleryImages: [
+      "/img/udaipur/rooms/standard room/room (1).jpg",
+      "/img/udaipur/rooms/standard room/room (2).jpg",
+      "/img/udaipur/rooms/standard room/room (3).jpg",
+      "/img/udaipur/rooms/standard room/room (4).jpg",
+      "/img/udaipur/rooms/standard room/room (5).jpg",
+      "/img/udaipur/rooms/standard room/room (6).jpg",
+      "/img/udaipur/rooms/standard room/room (7).jpg",
+      "/img/udaipur/rooms/standard room/room (8).jpg",
+      "/img/udaipur/rooms/standard room/room (9).jpg",
+    ],
+    delay: "0.1s",
+  },
+  {
+    id: "standard-lake-view",
+    title: "Standard Lake View",
+    image: "/img/udaipur/rooms/standard lake view/room (1).jpg",
+    alt: "Standard lake view room interior",
+    bedCount: 2,
+    bathCount: 1,
+    galleryImages: [
+      "/img/udaipur/rooms/standard lake view/room (1).jpg",
+      "/img/udaipur/rooms/standard lake view/room (2).jpg",
+      "/img/udaipur/rooms/standard lake view/room (3).jpg",
+      "/img/udaipur/rooms/standard lake view/room (4).jpg",
+      "/img/udaipur/rooms/standard lake view/room (5).jpg",
+      "/img/udaipur/rooms/standard lake view/room (6).jpg",
+      "/img/udaipur/rooms/standard lake view/room (7).jpg",
+      "/img/udaipur/rooms/standard lake view/room (8).jpg",
+    ],
+    delay: "0.1s",
+  },
+  {
+    id: "maharaja",
+    title: "Maharaja",
+    image: "/img/udaipur/rooms/maharaja/room (1).jpg",
+    alt: "Maharaja room interior",
+    bedCount: 2,
+    bathCount: 1,
+    galleryImages: [
+      "/img/udaipur/rooms/maharaja/room (1).jpg",
+      "/img/udaipur/rooms/maharaja/room (2).jpg",
+      "/img/udaipur/rooms/maharaja/room (3).jpg",
+    ],
+    delay: "0.1s",
+  },
+  {
+    id: "family room",
+    title: "Family Room",
+    image: "/img/udaipur/rooms/family room/room (1).jpg",
+    alt: "Family room interior",
+    bedCount: 2,
+    bathCount: 1,
+    galleryImages: [
+      "/img/udaipur/rooms/family room/room (1).jpg",
+      "/img/udaipur/rooms/family room/room (2).jpg",
+      "/img/udaipur/rooms/family room/room (3).jpg",
+      "/img/udaipur/rooms/family room/room (4).jpg",
+      "/img/udaipur/rooms/family room/room (5).jpg",
+      "/img/udaipur/rooms/family room/room (6).jpg",
+    ],
+    delay: "0.1s",
+  },
+  {
+    id: "deluxe lake view",
+    title: "Deluxe Lake View",
+    image: "/img/udaipur/rooms/deluxe lake view/room (1).jpg",
+    alt: "Deluxe lake view room interior",
+    bedCount: 2,
+    bathCount: 1,
+    galleryImages: [
+      "/img/udaipur/rooms/deluxe lake view/room (1).jpg",
+      "/img/udaipur/rooms/deluxe lake view/room (2).jpg",
+      "/img/udaipur/rooms/deluxe lake view/room (3).jpg",
+      "/img/udaipur/rooms/deluxe lake view/room (4).jpg",
+      "/img/udaipur/rooms/deluxe lake view/room (5).jpg",
+      "/img/udaipur/rooms/deluxe lake view/room (6).jpg",
+    ],
+    delay: "0.1s",
+  },
+];

@@ -82,7 +82,8 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
                 <div className="navbar-nav mr-auto py-0">
                   <Link href="/" className="nav-item nav-link">Home</Link>
                   <Link href="/about" className="nav-item nav-link">About</Link>
-                  <Link href="/#Rooms" className="nav-item nav-link">Rooms</Link>
+                  <Link href="/jodhpur" className="nav-item nav-link">Jodhpur</Link>
+                  <Link href="/udaipur" className="nav-item nav-link">Udaipur</Link>
                   <Link href="/book" className="nav-item nav-link">Book Now</Link>
                   <Link href="/#Contact" className="nav-item nav-link">Contact</Link>
                 </div>

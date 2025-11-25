@@ -11,7 +11,7 @@ interface RoomCardProps {
   readonly bathCount: number;
   readonly galleryImages: string[];
   readonly delay: string;
-  readonly phone: string;
+  readonly phone?: string; // Make phone optional
 }
 
 export default function RoomCard({
@@ -117,19 +117,31 @@ export default function RoomCard({
               >
                 Room Images
               </button>
-              <a
-                className="btn btn-sm btn-dark rounded py-2 px-4"
-                href={`tel:${phone}`}
-                data-gtm-event="call_now_click"
-                data-gtm-room-type={title}
-                data-gtm-phone={phone}
-                onClick={() => {
-                  // Track the call event with GTM
-                  trackCallNowClick(title, phone);
-                }}
-              >
-                Call Now
-              </a>
+              {phone ? (
+                <a
+                  className="btn btn-sm btn-dark rounded py-2 px-4"
+                  href={`tel:${phone}`}
+                  data-gtm-event="call_now_click"
+                  data-gtm-room-type={title}
+                  data-gtm-phone={phone}
+                  onClick={() => {
+                    // Track the call event with GTM
+                    trackCallNowClick(title, phone);
+                  }}
+                >
+                  Call Now
+                </a>
+              ) : (
+                <a
+                  className="btn btn-sm btn-dark rounded py-2 px-4"
+                  href="/book"
+                  data-gtm-event="booking_click"
+                  data-gtm-room-type={title}
+                  data-gtm-source="room_card"
+                >
+                  Book Now
+                </a>
+              )}
             </div>
           </div>
         </div>

@@ -6,8 +6,11 @@ import InstagramSection from '../../components/InstagramSection';
 import PropertyGallery, { PropertyGalleryRef } from '../../components/PropertyGallery';
 import { useRef } from 'react';
 import Head from 'next/head';
+import { udaipurRooms } from '@/data/rooms';
 
-export default function Home() {
+
+
+export default function UdaipurPage() {
   const propertyGalleryRef = useRef<PropertyGalleryRef>(null);
 
   const openPropertyGallery = () => {
@@ -38,14 +41,18 @@ export default function Home() {
                 <div className="carousel-item active">
                   <img
                     className="w-100"
-                    src="/img/hero-slider/CKC04015-HDR.jpg"
+                    src="/img/udaipur/hero-slider/room.jpg"
                     alt="Storica Stays Heritage Hostel"
                     style={{objectFit: "cover"}}
                   />
                   <div
                     className="carousel-caption d-flex flex-column align-items-center justify-content-center"
                   >
-                    <div className="p-3" style={{ maxWidth: "700px" }}>
+                    <div className="p-3" style={{ 
+                      maxWidth: "700px",
+                      backgroundColor: "rgba(0, 0, 0, 0.5)",
+                      borderRadius: "10px"
+                    }}>
                       <h1 className="display-3 text-white mb-4 animated slideInDown">
                         Most Relaxing Place
                       </h1>
@@ -63,14 +70,18 @@ export default function Home() {
                 <div className="carousel-item">
                   <img
                     className="w-100"
-                    src="/img/hero-slider/CKC03767.jpg"
+                   src="/img/udaipur/hero-slider/room (2).jpg"
                     alt="Heritage Architecture"
                     style={{objectFit: "cover"}}
                   />
                   <div
                     className="carousel-caption d-flex flex-column align-items-center justify-content-center"
                   >
-                    <div className="p-3" style={{ maxWidth: "700px" }}>
+                    <div className="p-3" style={{ 
+                      maxWidth: "700px",
+                      backgroundColor: "rgba(0, 0, 0, 0.5)",
+                      borderRadius: "10px"
+                    }}>
                       <h1 className="display-3 text-white mb-4 animated slideInDown">
                         Most Relaxing Place
                       </h1>
@@ -90,14 +101,18 @@ export default function Home() {
                 <div className="carousel-item">
                   <img
                     className="w-100"
-                    src="/img/hero-slider/CKC03841-HDR.jpg"
+                   src="/img/udaipur/hero-slider/room (3).jpg"
                     alt="Rooftop Restaurant View"
                     style={{objectFit: "cover"}}
                   />
                   <div
                     className="carousel-caption d-flex flex-column align-items-center justify-content-center"
                   >
-                    <div className="p-3" style={{ maxWidth: "700px" }}>
+                    <div className="p-3" style={{ 
+                      maxWidth: "700px",
+                      backgroundColor: "rgba(0, 0, 0, 0.5)",
+                      borderRadius: "10px"
+                    }}>
                       <h1 className="display-3 text-white mb-4 animated slideInDown">
                         Most Relaxing Place
                       </h1>
@@ -137,23 +152,7 @@ export default function Home() {
           </div>
            {/* Carousel End  */}
       <div className="container-xxl bg-white p-0">
-           {/* Spinner Start  */}
-           {/* <div
-            id="spinner"
-            className="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
-          >
-            <div
-              className="spinner-border text-primary"
-              style={{width: "3rem", height: "3rem"}}
-              role="status"
-            >
-              <span className="sr-only">Loading...</span>
-            </div>
-          </div>  */}
-           {/* Spinner End  */}
-    
 
-     
            {/* About Start  */}
           <div className="container-xxl py-5" id="about">
             <div className="container">
@@ -173,13 +172,13 @@ export default function Home() {
                     hotel promises a unique blend of comfort. Discover cosy rooms, designed to provide a peaceful oasis in the heart of
                     the city&apos;s vibrant old town.
                   </p>
-                  <button 
+                  {/* <button 
                     className="btn btn-primary py-3 px-5 mt-2" 
                     type="button"
                     onClick={openPropertyGallery}
                   >
                     Property Images
-                  </button>
+                  </button> */}
                 </div>
                 <div className="col-lg-6">
                   <div className="row g-3">
@@ -188,13 +187,13 @@ export default function Home() {
                         type="button"
                         className="p-0 border-0 bg-transparent img-fluid rounded w-75 wow zoomIn"
                         style={{ marginTop: "25%" }}
-                        onClick={openPropertyGallery}
+                      
                         aria-label="Open property gallery"
                       >
                         <img
                           className="img-fluid rounded w-100"
                           data-wow-delay="0.1s"
-                          src="/img/General/CKC03844-HDR.jpg"
+                          src="/img/udaipur/property/property (7).jpg"
                           alt="Heritage building exterior"
                           style={{ pointerEvents: "none" }}
                           tabIndex={-1}
@@ -207,13 +206,13 @@ export default function Home() {
                         type="button"
                         className="p-0 border-0 bg-transparent img-fluid rounded w-100 wow zoomIn"
                         data-wow-delay="0.3s"
-                        onClick={openPropertyGallery}
+                       
                         aria-label="Open property gallery"
                         style={{ display: "inline-block" }}
                       >
                         <img
                           className="img-fluid rounded w-100"
-                          src="/img/General/CKC03886-HDR.jpg"
+                          src="/img/udaipur/property/property (1).jpg"
                           alt="Storica Stays interior courtyard"
                           style={{ pointerEvents: "none" }}
                           tabIndex={-1}
@@ -226,13 +225,13 @@ export default function Home() {
                         type="button"
                         className="p-0 border-0 bg-transparent img-fluid rounded w-100 wow zoomIn"
                         data-wow-delay="0.5s"
-                        onClick={openPropertyGallery}
+                       
                         aria-label="Open property gallery"
                         style={{ display: "inline-block" }}
                       >
                         <img
                           className="img-fluid rounded w-100"
-                          src="/img/General/CKC03983-HDR.jpg"
+                         src="/img/udaipur/property/property (3).jpg"
                           alt="Traditional architecture details"
                           style={{ pointerEvents: "none" }}
                           tabIndex={-1}
@@ -245,13 +244,13 @@ export default function Home() {
                         type="button"
                         className="p-0 border-0 bg-transparent img-fluid rounded w-75 wow zoomIn"
                         data-wow-delay="0.7s"
-                        onClick={openPropertyGallery}
+                       
                         aria-label="Open property gallery"
                         style={{ display: "inline-block" }}
                       >
                         <img
                           className="img-fluid rounded w-100"
-                          src="/img/General/CKC03907-HDR.jpg"
+                          src="/img/udaipur/property/room (2).jpg"
                           alt="Heritage hostel ambiance"
                           style={{ pointerEvents: "none" }}
                           tabIndex={-1}
@@ -266,7 +265,7 @@ export default function Home() {
           </div>
            {/* About End  */}
     
-           <RoomsSection />
+           <RoomsSection rooms={udaipurRooms} />
 
            <InstagramSection />
 
