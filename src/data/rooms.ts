@@ -240,7 +240,7 @@ export const primeUdaipurRooms: Room[] = [
   {
     id: "super-deluxe-lake-view",
     title: "Super Deluxe Lake View",
-    image: "/img/udaipur/rooms/super deluxe lake view/room (1).jpg",
+    image: "/img/udaipur/rooms/super deluxe lake view/room (2).jpg",
     alt: "Super Deluxe Lake View room interior",
     bedCount: 2,
     bathCount: 1,
