@@ -1,0 +1,108 @@
+/* Booking Page Styles */
+
+/* Booking iframe container */
+.booking-frame-container {
+  position: relative;
+  width: 100%;
+  min-height: 800px;
+}
+
+/* Loading indicator styles */
+#iframe-loader {
+  background: rgba(248, 249, 250, 0.95);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+#iframe-loader .spinner-border {
+  border-width: 4px;
+  animation: enhanced-spin 1.5s linear infinite;
+}
+
+#iframe-loader p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #6c757d;
+}
+
+/* Enhanced spinner animation */
+@keyframes enhanced-spin {
+  0% { 
+    transform: rotate(0deg) scale(1); 
+    border-color: #0d6efd transparent transparent transparent;
+  }
+  25% { 
+    transform: rotate(90deg) scale(1.05);
+    border-color: #0d6efd #0d6efd transparent transparent;
+  }
+  50% { 
+    transform: rotate(180deg) scale(1); 
+    border-color: #0d6efd #0d6efd #0d6efd transparent;
+  }
+  75% { 
+    transform: rotate(270deg) scale(1.05);
+    border-color: #0d6efd #0d6efd #0d6efd #0d6efd;
+  }
+  100% { 
+    transform: rotate(360deg) scale(1); 
+    border-color: #0d6efd transparent transparent transparent;
+  }
+}
+
+/* Iframe styles */
+.booking-frame-container iframe {
+  width: 100%;
+  border: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .booking-frame-container {
+    margin: 0 -15px;
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+  }
+  
+  #iframe-loader {
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  
+  #iframe-loader .spinner-border {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+}
+
+/* Booking benefits section */
+.booking-benefits {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.booking-benefits .benefit-icon {
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+}
+
+/* Enhanced mobile experience */
+@media (max-width: 576px) {
+  .booking-benefits {
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .benefit-icon {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 1.25rem !important;
+  }
+}
