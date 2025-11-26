@@ -84,7 +84,7 @@ export const udaipurRooms: Room[] = [
   {
     id: "heritage",
     title: "Superior Heritage",
-    image: "/img/udaipur/rooms/superior heritage/room (1).jpg",
+    image: "/img/udaipur/rooms/superior heritage/room (7).jpg",
     alt: "Heritage room interior",
     bedCount: 2,
     bathCount: 1,
@@ -102,7 +102,7 @@ export const udaipurRooms: Room[] = [
   {
     id: "super-deluxe-lake-view",
     title: "Super Deluxe Lake View",
-    image: "/img/udaipur/rooms/super deluxe lake view/room (1).jpg",
+    image: "/img/udaipur/rooms/super deluxe lake view/room (2).jpg",
     alt: "Super Deluxe Lake View room interior",
     bedCount: 2,
     bathCount: 1,
@@ -110,21 +110,6 @@ export const udaipurRooms: Room[] = [
       "/img/udaipur/rooms/super deluxe lake view/room (1).jpg",
       "/img/udaipur/rooms/super deluxe lake view/room (2).jpg",
       "/img/udaipur/rooms/super deluxe lake view/room (3).jpg",
-    ],
-    delay: "0.1s",
-  },
-  {
-    id: "triple-bed",
-    title: "triple bed",
-    image: "/img/udaipur/rooms/triple bed/room (1).jpg",
-    alt: "Triple bed room interior",
-    bedCount: 2,
-    bathCount: 1,
-    galleryImages: [
-      "/img/udaipur/rooms/triple bed/room (1).jpg",
-      "/img/udaipur/rooms/triple bed/room (2).jpg",
-      "/img/udaipur/rooms/triple bed/room (3).jpg",
-      "/img/udaipur/rooms/triple bed/room (4).jpg",
     ],
     delay: "0.1s",
   },
@@ -151,7 +136,7 @@ export const udaipurRooms: Room[] = [
   {
     id: "standard-lake-view",
     title: "Standard Lake View",
-    image: "/img/udaipur/rooms/standard lake view/room (1).jpg",
+    image: "/img/udaipur/rooms/standard lake view/room (2).jpg",
     alt: "Standard lake view room interior",
     bedCount: 2,
     bathCount: 1,
@@ -184,7 +169,7 @@ export const udaipurRooms: Room[] = [
   {
     id: "family room",
     title: "Family Room",
-    image: "/img/udaipur/rooms/family room/room (1).jpg",
+    image: "/img/udaipur/rooms/family room/room (3).jpg",
     alt: "Family room interior",
     bedCount: 2,
     bathCount: 1,
@@ -201,7 +186,7 @@ export const udaipurRooms: Room[] = [
   {
     id: "deluxe lake view",
     title: "Deluxe Lake View",
-    image: "/img/udaipur/rooms/deluxe lake view/room (1).jpg",
+    image: "/img/udaipur/rooms/deluxe lake view/room (2).jpg",
     alt: "Deluxe lake view room interior",
     bedCount: 2,
     bathCount: 1,
@@ -215,6 +200,21 @@ export const udaipurRooms: Room[] = [
     ],
     delay: "0.1s",
   },
+  {
+    id: "triple-bed",
+    title: "triple bed",
+    image: "/img/udaipur/rooms/triple bed/room (1).jpg",
+    alt: "Triple bed room interior",
+    bedCount: 2,
+    bathCount: 1,
+    galleryImages: [
+      "/img/udaipur/rooms/triple bed/room (1).jpg",
+      "/img/udaipur/rooms/triple bed/room (2).jpg",
+      "/img/udaipur/rooms/triple bed/room (3).jpg",
+      "/img/udaipur/rooms/triple bed/room (4).jpg",
+    ],
+    delay: "0.1s",
+  },
 ];
 
 // Main rooms configuration
@@ -222,7 +222,7 @@ export const primeUdaipurRooms: Room[] = [
   {
     id: "heritage",
     title: "Superior Heritage",
-    image: "/img/udaipur/rooms/superior heritage/room (1).jpg",
+    image: "/img/udaipur/rooms/superior heritage/room (7).jpg",
     alt: "Heritage room interior",
     bedCount: 2,
     bathCount: 1,

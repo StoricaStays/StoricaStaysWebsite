@@ -210,7 +210,7 @@ export default function UdaipurPage() {
                       >
                         <img
                           className="img-fluid rounded w-100"
-                          src="/img/udaipur/property/property (1).jpg"
+                          src="/img/udaipur/property/rooftop.jpeg"
                           alt="Storica Stays interior courtyard"
                           style={{ pointerEvents: "none" }}
                           tabIndex={-1}
@@ -263,7 +263,7 @@ export default function UdaipurPage() {
           </div>
            {/* About End  */}
     
-           <RoomsSection rooms={udaipurRooms} />
+           <RoomsSection rooms={udaipurRooms}  title='udaipur rooms'/>
 
            <InstagramSection />
 
