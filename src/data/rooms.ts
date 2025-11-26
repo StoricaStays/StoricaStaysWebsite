@@ -155,7 +155,7 @@ export const udaipurRooms: Room[] = [
   {
     id: "maharaja",
     title: "Maharaja",
-    image: "/img/udaipur/rooms/maharaja/room (1).jpg",
+    image: "/img/udaipur/rooms/maharaja/room (2).jpg",
     alt: "Maharaja room interior",
     bedCount: 2,
     bathCount: 1,
@@ -202,7 +202,7 @@ export const udaipurRooms: Room[] = [
   },
   {
     id: "triple-bed",
-    title: "triple bed",
+    title: "Triple Bed",
     image: "/img/udaipur/rooms/triple bed/room (1).jpg",
     alt: "Triple bed room interior",
     bedCount: 2,
@@ -274,7 +274,7 @@ export const primeUdaipurRooms: Room[] = [
   {
     id: "maharaja",
     title: "Maharaja",
-    image: "/img/udaipur/rooms/maharaja/room (1).jpg",
+    image: "/img/udaipur/rooms/maharaja/room (2).jpg",
     alt: "Maharaja room interior",
     bedCount: 2,
     bathCount: 1,
