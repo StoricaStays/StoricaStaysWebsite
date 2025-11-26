@@ -1,17 +1,21 @@
-'use client';
+
 
 import RoomsSection from '../../components/RoomsSection';
 import ReviewsSection from '../../components/ReviewsSection';
 import InstagramSection from '../../components/InstagramSection';
-import PropertyGallery, { PropertyGalleryRef } from '../../components/PropertyGallery';
-import { useRef } from 'react';
+import PropertyGallery from '../../components/PropertyGallery';
+// import { useRef } from 'react';
 import Head from 'next/head';
 import { udaipurRooms } from '@/data/rooms';
+import type { Metadata } from 'next';
 
-
+export const metadata: Metadata = {
+  title: "Storica Stays Udaipur - Heritage Boutique Comfort and Rooftop Restaurant",
+  description: "Experience the charm of heritage at Storica Stays, your ideal Stay and rooftop restaurant.",
+};
 
 export default function UdaipurPage() {
-  const propertyGalleryRef = useRef<PropertyGalleryRef>(null);
+  //const propertyGalleryRef = useRef<PropertyGalleryRef>(null);
 
   // const openPropertyGallery = () => {
   //   if (propertyGalleryRef.current) {
@@ -28,7 +32,7 @@ export default function UdaipurPage() {
         <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.9.0-beta.1/css/lg-zoom.css" rel="stylesheet" />
       </Head>
 
-      <PropertyGallery ref={propertyGalleryRef} />
+      <PropertyGallery  />
 
            {/* Carousel Start  */}
            <div className="container-fluid p-0 mb-5">
@@ -86,13 +90,11 @@ export default function UdaipurPage() {
                       <a
                         href="#Rooms"
                         className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
-                        >Our Rooms</a
-                      >
+                        >Our Rooms</a>
                       <a
                         href="/book"
                         className="btn btn-light py-md-3 px-md-5 animated slideInRight"
-                        >Book A Room</a
-                      >
+                        >Book A Room</a>
                     </div>
                   </div>
                 </div>
