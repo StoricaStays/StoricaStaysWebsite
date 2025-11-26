@@ -6,6 +6,7 @@ import InstagramSection from '../components/InstagramSection';
 import PropertyGallery, { PropertyGalleryRef } from '../components/PropertyGallery';
 import { useRef } from 'react';
 import Head from 'next/head';
+import { primeUdaipurRooms } from '@/data/rooms';
 
 export default function Home() {
   const propertyGalleryRef = useRef<PropertyGalleryRef>(null);
@@ -31,16 +32,15 @@ export default function Home() {
            <div className="container-fluid p-0 mb-5">
             <div
               id="header-carousel"
-              className="carousel slide"
+              className="carousel slide header-carousel"
               data-bs-ride="carousel"
             >
               <div className="carousel-inner">
                 <div className="carousel-item active">
                   <img
-                    className="w-100"
+                    className="w-100 carousel-hero-image"
                     src="/img/hero-slider/CKC04015-HDR.jpg"
                     alt="Storica Stays Heritage Hostel"
-                    style={{objectFit: "cover"}}
                   />
                   <div
                     className="carousel-caption d-flex flex-column align-items-center justify-content-center"
@@ -62,10 +62,9 @@ export default function Home() {
                 </div>
                 <div className="carousel-item">
                   <img
-                    className="w-100"
+                    className="w-100 carousel-hero-image"
                     src="/img/hero-slider/CKC03767.jpg"
                     alt="Heritage Architecture"
-                    style={{objectFit: "cover"}}
                   />
                   <div
                     className="carousel-caption d-flex flex-column align-items-center justify-content-center"
@@ -89,10 +88,9 @@ export default function Home() {
                 </div>
                 <div className="carousel-item">
                   <img
-                    className="w-100"
+                    className="w-100 carousel-hero-image"
                     src="/img/hero-slider/CKC03841-HDR.jpg"
                     alt="Rooftop Restaurant View"
-                    style={{objectFit: "cover"}}
                   />
                   <div
                     className="carousel-caption d-flex flex-column align-items-center justify-content-center"
@@ -268,8 +266,10 @@ export default function Home() {
           </div>
            {/* About End  */}
     
-           <RoomsSection />
+           <RoomsSection title='Jodhpur Rooms' />
 
+          <RoomsSection rooms={primeUdaipurRooms} title="Udaipur Rooms" roomsLink="/udaipur" />
+           
            <InstagramSection />
 
            <ReviewsSection />

@@ -133,7 +133,7 @@ export default function About() {
                   <div className="p-4">
                     <i className="fa fa-3x fa-map-marker-alt text-primary mb-4"></i>
                     <h5>Prime Location</h5>
-                    <p>Located in the heart of Jodhpur&apos;s old town, walking distance to major attractions and markets.</p>
+                    <p>Located in the heart of Jodhpur&apos;s and Udaipur&apos;s old town, walking distance to major attractions and markets.</p>
                   </div>
                 </div>
               </div>

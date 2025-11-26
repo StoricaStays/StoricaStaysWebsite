@@ -40,3 +40,15 @@ a {
     color-scheme: dark;
   }
 }
+.header-carousel{
+  max-height: 600px;
+  overflow: hidden;
+}
+.carousel-hero-image{
+  object-fit: cover;
+  height: 600px;
+
+  @media (max-width: 768px) {
+    height: auto;
+  }
+}

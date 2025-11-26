@@ -216,3 +216,73 @@ export const udaipurRooms: Room[] = [
     delay: "0.1s",
   },
 ];
+
+// Main rooms configuration
+export const primeUdaipurRooms: Room[] = [
+  {
+    id: "heritage",
+    title: "Superior Heritage",
+    image: "/img/udaipur/rooms/superior heritage/room (1).jpg",
+    alt: "Heritage room interior",
+    bedCount: 2,
+    bathCount: 1,
+    galleryImages: [
+      "/img/udaipur/rooms/superior heritage/room (1).jpg",
+      "/img/udaipur/rooms/superior heritage/room (2).jpg",
+      "/img/udaipur/rooms/superior heritage/room (3).jpg",
+      "/img/udaipur/rooms/superior heritage/room (4).jpg",
+      "/img/udaipur/rooms/superior heritage/room (5).jpg",
+      "/img/udaipur/rooms/superior heritage/room (6).jpg",
+      "/img/udaipur/rooms/superior heritage/room (7).jpg",
+    ],
+    delay: "0.1s",
+  },
+  {
+    id: "super-deluxe-lake-view",
+    title: "Super Deluxe Lake View",
+    image: "/img/udaipur/rooms/super deluxe lake view/room (1).jpg",
+    alt: "Super Deluxe Lake View room interior",
+    bedCount: 2,
+    bathCount: 1,
+    galleryImages: [
+      "/img/udaipur/rooms/super deluxe lake view/room (1).jpg",
+      "/img/udaipur/rooms/super deluxe lake view/room (2).jpg",
+      "/img/udaipur/rooms/super deluxe lake view/room (3).jpg",
+    ],
+    delay: "0.1s",
+  },
+  {
+    id: "standard-room",
+    title: "Standard Room",
+    image: "/img/udaipur/rooms/standard room/room (1).jpg",
+    alt: "Standard room interior",
+    bedCount: 2,
+    bathCount: 1,
+    galleryImages: [
+      "/img/udaipur/rooms/standard room/room (1).jpg",
+      "/img/udaipur/rooms/standard room/room (2).jpg",
+      "/img/udaipur/rooms/standard room/room (3).jpg",
+      "/img/udaipur/rooms/standard room/room (4).jpg",
+      "/img/udaipur/rooms/standard room/room (5).jpg",
+      "/img/udaipur/rooms/standard room/room (6).jpg",
+      "/img/udaipur/rooms/standard room/room (7).jpg",
+      "/img/udaipur/rooms/standard room/room (8).jpg",
+      "/img/udaipur/rooms/standard room/room (9).jpg",
+    ],
+    delay: "0.1s",
+  },
+  {
+    id: "maharaja",
+    title: "Maharaja",
+    image: "/img/udaipur/rooms/maharaja/room (1).jpg",
+    alt: "Maharaja room interior",
+    bedCount: 2,
+    bathCount: 1,
+    galleryImages: [
+      "/img/udaipur/rooms/maharaja/room (1).jpg",
+      "/img/udaipur/rooms/maharaja/room (2).jpg",
+      "/img/udaipur/rooms/maharaja/room (3).jpg",
+    ],
+    delay: "0.1s",
+  },
+];

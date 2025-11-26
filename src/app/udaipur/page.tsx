@@ -34,16 +34,15 @@ export default function UdaipurPage() {
            <div className="container-fluid p-0 mb-5">
             <div
               id="header-carousel"
-              className="carousel slide"
+              className="carousel slide header-carousel"
               data-bs-ride="carousel"
             >
               <div className="carousel-inner">
                 <div className="carousel-item active">
                   <img
-                    className="w-100"
+                    className="w-100 carousel-hero-image"
                     src="/img/udaipur/hero-slider/room.jpg"
                     alt="Storica Stays Heritage Hostel"
-                    style={{objectFit: "cover"}}
                   />
                   <div
                     className="carousel-caption d-flex flex-column align-items-center justify-content-center"
@@ -69,10 +68,9 @@ export default function UdaipurPage() {
                 </div>
                 <div className="carousel-item">
                   <img
-                    className="w-100"
+                    className="w-100 carousel-hero-image"
                    src="/img/udaipur/hero-slider/room (2).jpg"
                     alt="Heritage Architecture"
-                    style={{objectFit: "cover"}}
                   />
                   <div
                     className="carousel-caption d-flex flex-column align-items-center justify-content-center"
@@ -100,10 +98,9 @@ export default function UdaipurPage() {
                 </div>
                 <div className="carousel-item">
                   <img
-                    className="w-100"
+                    className="w-100 carousel-hero-image"
                    src="/img/udaipur/hero-slider/room (3).jpg"
                     alt="Rooftop Restaurant View"
-                    style={{objectFit: "cover"}}
                   />
                   <div
                     className="carousel-caption d-flex flex-column align-items-center justify-content-center"
@@ -158,9 +155,10 @@ export default function UdaipurPage() {
             <div className="container">
               <div className="row g-5 align-items-center">
                 <div className="col-lg-6">
-                  <h6 className="section-title text-start text-primary text-uppercase">
-                    About Us
-                  </h6>
+                    <h6 className="section-title text-start text-primary text-uppercase">
+                    <i className="fa fa-map-marker-alt text-primary me-2"></i>
+                    Udaipur
+                    </h6>
                   <h1 className="mb-4">
                     Welcome to{" "}
                     <span className="text-primary text-uppercase">Storica Stays</span>

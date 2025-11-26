@@ -12,6 +12,7 @@ interface RoomsSectionProps {
   containerClass?: string;
   wow?: boolean;
   wowDelay?: string;
+  roomsLink?: string;
 }
 
 export default function RoomsSection({
@@ -23,7 +24,8 @@ export default function RoomsSection({
   phone = "+91 6378365775",
   containerClass = "container-xxl py-5",
   wow = true,
-  wowDelay = "0.1s"
+  wowDelay = "0.1s",
+  roomsLink = ""
 }: RoomsSectionProps = {}) {
   return (
     <>
@@ -59,6 +61,18 @@ export default function RoomsSection({
         </div>
       </div>
       {/* Room End */}
+      {roomsLink && (
+        <>
+        <div className="text-center mt-4">
+          <a href={roomsLink} className="btn btn-primary py-3 px-5">
+            Show More Rooms
+          </a>
+        </div>
+        <div className="separator my-5">
+          <hr />
+        </div>
+        </>
+      )}
     </>
   );
 }
