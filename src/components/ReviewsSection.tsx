@@ -1,12 +1,17 @@
 'use client';
 
+import { Star } from "lucide-react";
+import Container from "./ui/Container";
+import SectionHeading from "./ui/SectionHeading";
+import Card from "./ui/Card";
+import Button from "./ui/Button";
+
 interface Review {
   id: string;
   name: string;
   rating: number;
   comment: string;
   date: string;
-  avatar?: string;
   platform: 'Google' | 'Booking.com' | 'TripAdvisor' | 'Hostelworld';
 }
 
@@ -61,123 +66,80 @@ const reviews: Review[] = [
   }
 ];
 
-const StarRating = ({ rating }: { rating: number }) => {
-  return (
-    <div className="d-flex">
-      {[1, 2, 3, 4, 5].map((star) => (
-        <small
-          key={star}
-          className={`fa fa-star ${star <= rating ? 'text-primary' : 'text-muted'}`}
-        ></small>
-      ))}
-    </div>
-  );
+const StarRating = ({ rating }: { rating: number }) => (
+  <div className="flex gap-0.5">
+    {[1, 2, 3, 4, 5].map((star) => (
+      <Star
+        key={star}
+        size={14}
+        className={star <= rating ? "fill-primary-500 text-primary-500" : "text-sand-300"}
+      />
+    ))}
+  </div>
+);
+
+const platformClasses: Record<Review["platform"], string> = {
+  Google: "bg-red-50 text-red-600",
+  "Booking.com": "bg-primary-50 text-primary-700",
+  TripAdvisor: "bg-green-50 text-green-700",
+  Hostelworld: "bg-amber-50 text-amber-700",
 };
 
-const PlatformBadge = ({ platform }: { platform: string }) => {
-  const getBadgeClass = (platform: string) => {
-    switch (platform) {
-      case 'Google':
-        return 'badge bg-danger';
-      case 'Booking.com':
-        return 'badge bg-primary';
-      case 'TripAdvisor':
-        return 'badge bg-success';
-      case 'Hostelworld':
-        return 'badge bg-warning text-dark';
-      default:
-        return 'badge bg-secondary';
-    }
-  };
-
-  return <span className={getBadgeClass(platform)}>{platform}</span>;
-};
+const PlatformBadge = ({ platform }: { platform: Review["platform"] }) => (
+  <span className={`rounded-full px-3 py-1 text-xs font-medium ${platformClasses[platform]}`}>
+    {platform}
+  </span>
+);
 
 export default function ReviewsSection() {
   return (
-    <>
-      {/* Reviews Start */}
-      <div className="container-xxl py-5" id="Reviews">
-        <div className="container">
-          <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 className="section-title text-center text-primary text-uppercase">
-              Guest Reviews
-            </h6>
-            <h1 className="mb-5">
-              What Our <span className="text-primary text-uppercase">Guests</span> Say
-            </h1>
-          </div>
-          <div className="row g-4">
-            {reviews.map((review, index) => (
-              <div 
-                key={review.id} 
-                className="col-lg-4 col-md-6 wow fadeInUp" 
-                data-wow-delay={`${0.1 + index * 0.1}s`}
-              >
-                <div className="testimonial-item bg-light rounded p-4 h-100">
-                  <div className="d-flex align-items-center mb-3">
-                    <div className="flex-shrink-0">
-                      <div 
-                        className="bg-primary rounded-circle d-flex align-items-center justify-content-center"
-                        style={{ width: '50px', height: '50px' }}
-                      >
-                        <span className="text-white fw-bold">
-                          {review.name.split(' ').map(n => n[0]).join('').toUpperCase()}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="ms-3">
-                      <h5 className="mb-1">{review.name}</h5>
-                      <div className="d-flex align-items-center">
-                        <StarRating rating={review.rating} />
-                        <small className="text-muted ms-2">({review.rating}/5)</small>
-                      </div>
-                    </div>
-                  </div>
-                  <p className="mb-3">&ldquo;{review.comment}&rdquo;</p>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <small className="text-muted">{review.date}</small>
-                    <PlatformBadge platform={review.platform} />
-                  </div>
+    <div className="py-20 sm:py-28 bg-sand-50" id="Reviews">
+      <Container>
+        <SectionHeading eyebrow="Guest Reviews" title={<>What Our <span className="text-primary-600">Guests</span> Say</>} />
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {reviews.map((review) => (
+            <Card key={review.id} className="p-6 flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary-600 text-sm font-semibold text-white">
+                  {review.name.split(' ').map((n) => n[0]).join('').toUpperCase()}
+                </div>
+                <div>
+                  <p className="font-sans text-sm font-semibold text-ink-900">{review.name}</p>
+                  <StarRating rating={review.rating} />
                 </div>
               </div>
-            ))}
-          </div>
-          
-          {/* Overall Rating Summary */}
-          <div className="row mt-5">
-            <div className="col-12">
-              <div className="bg-primary rounded p-4 text-center wow fadeInUp" data-wow-delay="0.1s">
-                <div className="row align-items-center">
-                  <div className="col-md-3">
-                    <h2 className="text-white mb-0">4.8/5</h2>
-                    <div className="d-flex justify-content-center mt-2">
-                      <StarRating rating={5} />
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <h4 className="text-white mb-2">Excellent Rating</h4>
-                    <p className="text-white mb-0">
-                      Based on 300+ verified guest reviews across multiple platforms
-                    </p>
-                  </div>
-                  <div className="col-md-3">
-                    <a 
-                      href="https://www.google.com/travel/hotels/entity/CgsI5fWw4_Ot5cTvARAB/reviews?q=storica%20stays&g2lb=4965990%2C4969803%2C72277293%2C72302247%2C72317059%2C72414906%2C72471280%2C72472051%2C72485658%2C72560029%2C72573224%2C72616120%2C72647020%2C72648289%2C72686036%2C72760082%2C72803964%2C72832976%2C72882230%2C72958594%2C72958624%2C72959982%2C72963671%2C72972040%2C73016630&hl=en-IN&gl=in&cs=1&ssta=1&ts=CAEaSQorEicyJTB4Mzk0MThkMDAzNTFkZGY4MzoweGVmODk5NTZmM2M2YzNhZTUaABIaEhQKBwjpDxAHGAwSBwjpDxAHGA0YATICEAAqCQoFOgNJTlIaAA&qs=CAE4AkIJCeU6bDxvlYnvQgkJ5TpsPG-Vie8&ictx=111&utm_campaign=sharing&utm_medium=link&utm_source=htls" 
-                      className="btn btn-light py-2 px-4"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Write a Review
-                    </a>
-                  </div>
-                </div>
+              <p className="font-sans text-sm leading-relaxed text-sand-700">&ldquo;{review.comment}&rdquo;</p>
+              <div className="mt-auto flex items-center justify-between pt-2">
+                <span className="font-sans text-xs text-sand-500">{review.date}</span>
+                <PlatformBadge platform={review.platform} />
               </div>
+            </Card>
+          ))}
+        </div>
+
+        <div className="mt-10 rounded-2xl bg-primary-600 px-8 py-10 text-center sm:text-left sm:flex sm:items-center sm:justify-between gap-8">
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <div>
+              <p className="font-display text-4xl text-white">4.8/5</p>
+              <div className="flex justify-center sm:justify-start mt-1"><StarRating rating={5} /></div>
+            </div>
+            <div>
+              <p className="font-sans text-lg font-semibold text-white">Excellent Rating</p>
+              <p className="font-sans text-sm text-primary-100">Based on 300+ verified guest reviews across multiple platforms</p>
             </div>
           </div>
+          <Button
+            href="https://www.google.com/travel/hotels/entity/CgsI5fWw4_Ot5cTvARAB/reviews?q=storica%20stays&g2lb=4965990%2C4969803%2C72277293%2C72302247%2C72317059%2C72414906%2C72471280%2C72472051%2C72485658%2C72560029%2C72573224%2C72616120%2C72647020%2C72648289%2C72686036%2C72760082%2C72803964%2C72832976%2C72882230%2C72958594%2C72958624%2C72959982%2C72963671%2C72972040%2C73016630&hl=en-IN&gl=in&cs=1&ssta=1&ts=CAEaSQorEicyJTB4Mzk0MThkMDAzNTFkZGY4MzoweGVmODk5NTZmM2M2YzNhZTUaABIaEhQKBwjpDxAHGAwSBwjpDxAHGA0YATICEAAqCQoFOgNJTlIaAA&qs=CAE4AkIJCeU6bDxvlYnvQgkJ5TpsPG-Vie8&ictx=111&utm_campaign=sharing&utm_medium=link&utm_source=htls"
+            target="_blank"
+            variant="outline"
+            size="md"
+            className="mt-6 sm:mt-0 shrink-0"
+          >
+            Write a Review
+          </Button>
         </div>
-      </div>
-      {/* Reviews End */}
-    </>
+      </Container>
+    </div>
   );
 }

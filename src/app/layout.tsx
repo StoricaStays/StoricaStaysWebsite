@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import Scripts from "../components/Scripts";
 import AsyncCSS from "../components/AsyncCSS";
 import PerformanceOptimizer from "../components/PerformanceOptimizer";
 import ClientLayout from "../components/ClientLayout";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
+  axes: ["opsz", "SOFT", "WONK"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -38,21 +39,15 @@ export default function RootLayout({
         <link href="/img/favicon.ico" rel="icon" />
     
         {/* Preconnect to external domains */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
         <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-    
-        {/* Critical CSS only */}
-        <link href="/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="/css/style.css" rel="stylesheet" />
-        
+
         {/* LightGallery CSS */}
         <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.9.0-beta.1/css/lightgallery.css" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.9.0-beta.1/css/lg-thumbnail.css" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.9.0-beta.1/css/lg-zoom.css" rel="stylesheet" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${fraunces.variable} ${inter.variable}`}>
         <Scripts />
         <AsyncCSS />
         <PerformanceOptimizer />
@@ -71,12 +66,6 @@ export default function RootLayout({
         <ClientLayout>
           {children}
         </ClientLayout>
-
-        {/* Back to Top */}
-        {/* <a href="#" className="btn btn-lg btn-primary btn-lg-square back-to-top">
-          <i className="bi bi-arrow-up"></i>
-        </a>
-         */}
       </body>
     </html>
   );

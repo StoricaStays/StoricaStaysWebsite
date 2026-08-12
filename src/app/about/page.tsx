@@ -1,175 +1,127 @@
-import Link from 'next/link';
+import { Landmark, UtensilsCrossed, MapPin, Wifi, Clock, ShieldCheck, Hotel, Star, Headphones } from 'lucide-react';
+import Container from '../../components/ui/Container';
+import SectionHeading from '../../components/ui/SectionHeading';
+import Button from '../../components/ui/Button';
+import Card from '../../components/ui/Card';
+
+const STATS = [
+  { icon: Hotel, value: '5', label: 'Room Types' },
+  { icon: Headphones, value: '24/7', label: 'Support' },
+  { icon: Star, value: '4.8', label: 'Rating' },
+];
+
+const FEATURES = [
+  {
+    icon: Landmark,
+    title: 'Heritage Property',
+    description: 'Authentic Rajasthani architecture and traditional design, restored and cared for in the old towns of Jodhpur and Udaipur.',
+  },
+  {
+    icon: UtensilsCrossed,
+    title: 'Rooftop Restaurant',
+    description: 'Local and international cuisine served with fort and lake views from our rooftop restaurants.',
+  },
+  {
+    icon: MapPin,
+    title: 'Prime Location',
+    description: 'In the heart of the old town, walking distance to forts, lakes, markets, and major attractions.',
+  },
+  {
+    icon: Wifi,
+    title: 'Free WiFi',
+    description: 'Complimentary high-speed internet throughout the property, so you stay connected on the road.',
+  },
+  {
+    icon: Clock,
+    title: '24/7 Reception',
+    description: 'Friendly staff on hand around the clock for check-in, travel tips, and anything you need.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Safe & Secure',
+    description: 'Secure lockers, CCTV surveillance, and well-lit common areas throughout the property.',
+  },
+];
 
 export default function About() {
   return (
-    <div className="container-xxl bg-white p-0">
-        {/* About Start */}
-        <div className="container-xxl py-5">
-          <div className="container">
-            <div className="row g-5 align-items-center">
-              <div className="col-lg-6">
-                <h6 className="section-title text-start text-primary text-uppercase">
-                  About Us
-                </h6>
-                <h1 className="mb-4">
-                  Welcome to{" "}
-                  <span className="text-primary text-uppercase">Storica Stays</span>
-                </h1>
-                <p className="mb-4">
-                  Nestled amidst the timeless beauty of Jodhpur and Udaipur, Storica Stays
-                  invites you to experience an unforgettable journey. With
-                  stunning fort views from its rooftop restaurant, this heritage
-                  backpacker hostel promises a unique blend of comfort and
-                  adventure.
-                </p>
-                <p className="mb-4">
-                  Discover cosy dormitory rooms and a private double
-                  bedroom, designed to provide a peaceful oasis in the heart of
-                  the city&apos;s vibrant old town. Our heritage property combines
-                  traditional Rajasthani architecture with modern amenities to
-                  ensure your stay is both authentic and comfortable.
-                </p>
-                <div className="row g-3 pb-4">
-                  <div className="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div className="border rounded p-1">
-                      <div className="border rounded text-center p-4">
-                        <i className="fa fa-hotel fa-2x text-primary mb-2"></i>
-                        <h2 className="mb-1">5</h2>
-                        <p className="mb-0">Room Types</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
-                    <div className="border rounded p-1">
-                      <div className="border rounded text-center p-4">
-                        <i className="fa fa-users-cog fa-2x text-primary mb-2"></i>
-                        <h2 className="mb-1">24/7</h2>
-                        <p className="mb-0">Support</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
-                    <div className="border rounded p-1">
-                      <div className="border rounded text-center p-4">
-                        <i className="fa fa-star fa-2x text-primary mb-2"></i>
-                        <h2 className="mb-1">4.8</h2>
-                        <p className="mb-0">Rating</p>
-                      </div>
-                    </div>
-                  </div>
+    <div>
+      {/* Story */}
+      <div className="py-20 sm:py-28" id="about">
+        <Container className="grid gap-12 lg:grid-cols-2 items-center">
+          <div>
+            <SectionHeading
+              align="left"
+              eyebrow="About Us"
+              title={<>Welcome to <span className="text-primary-600">Storica Stays</span></>}
+            />
+            <p className="mt-6 font-sans text-sand-700 leading-relaxed">
+              Nestled amidst the timeless beauty of Jodhpur and Udaipur, Storica Stays invites
+              you to experience an unforgettable journey. With stunning fort views from its
+              rooftop restaurant, this heritage property promises a unique blend of comfort
+              and adventure.
+            </p>
+            <p className="mt-4 font-sans text-sand-700 leading-relaxed">
+              Discover cosy dormitory rooms and private rooms designed to provide a peaceful
+              oasis in the heart of each city&apos;s vibrant old town. Our heritage properties
+              combine traditional Rajasthani architecture with modern amenities to ensure your
+              stay is both authentic and comfortable.
+            </p>
+
+            <div className="mt-10 grid grid-cols-3 gap-6 max-w-sm">
+              {STATS.map(({ icon: Icon, value, label }) => (
+                <div key={label}>
+                  <Icon size={20} className="text-primary-600" />
+                  <p className="mt-2 font-display text-2xl text-ink-900">{value}</p>
+                  <p className="font-sans text-xs text-sand-500">{label}</p>
                 </div>
-                <Link className="btn btn-primary py-3 px-5 mt-2" href="/#Contact">Contact Us</Link>
-              </div>
-              <div className="col-lg-6">
-                <div className="row g-3">
-                  <div className="col-6 text-end">
-                    <img
-                      className="img-fluid rounded w-75 wow zoomIn"
-                      data-wow-delay="0.1s"
-                      src="/img/General/CKC03844-HDR.jpg"
-                      style={{marginTop: "25%"}}
-                      alt="Storica Stays Heritage Property"
-                    />
-                  </div>
-                  <div className="col-6 text-start">
-                    <img
-                      className="img-fluid rounded w-100 wow zoomIn"
-                      data-wow-delay="0.3s"
-                      src="/img/General/CKC03886-HDR.jpg"
-                      alt="Rooftop Restaurant View"
-                    />
-                  </div>
-                  <div className="col-6 text-end">
-                    <img
-                      className="img-fluid rounded w-100 wow zoomIn"
-                      data-wow-delay="0.5s"
-                      src="/img/General/CKC03983-HDR.jpg"
-                      alt="Heritage Architecture"
-                    />
-                  </div>
-                  <div className="col-6 text-start">
-                    <img
-                      className="img-fluid rounded w-75 wow zoomIn"
-                      data-wow-delay="0.7s"
-                      src="/img/General/CKC03907-HDR.jpg"
-                      alt="Traditional Decor"
-                    />
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
+
+            <Button href="/#Contact" size="lg" className="mt-10">Contact Us</Button>
           </div>
-        </div>
-        {/* About End */}
 
-        {/* Features Start */}
-        <div className="container-xxl py-5">
-          <div className="container">
-            <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
-              <h6 className="section-title text-center text-primary text-uppercase">Our Features</h6>
-              <h1 className="mb-5">Why Choose <span className="text-primary text-uppercase">Storica Stays</span></h1>
-            </div>
-            <div className="row g-4">
-              <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div className="service-item rounded pt-3 h-100">
-                  <div className="p-4">
-                    <i className="fa fa-3x fa-fort-awesome text-primary mb-4"></i>
-                    <h5>Heritage Property</h5>
-                    <p>Experience authentic Rajasthani architecture and traditional design in our beautifully restored heritage building.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                <div className="service-item rounded pt-3 h-100">
-                  <div className="p-4">
-                    <i className="fa fa-3x fa-utensils text-primary mb-4"></i>
-                    <h5>Rooftop Restaurant</h5>
-                    <p>Enjoy delicious local and international cuisine with stunning fort views from our rooftop restaurant.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div className="service-item rounded pt-3 h-100">
-                  <div className="p-4">
-                    <i className="fa fa-3x fa-map-marker-alt text-primary mb-4"></i>
-                    <h5>Prime Location</h5>
-                    <p>Located in the heart of Jodhpur&apos;s and Udaipur&apos;s old town, walking distance to major attractions and markets.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                <div className="service-item rounded pt-3 h-100">
-                  <div className="p-4">
-                    <i className="fa fa-3x fa-wifi text-primary mb-4"></i>
-                    <h5>Free WiFi</h5>
-                    <p>Stay connected with complimentary high-speed internet access throughout the property.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div className="service-item rounded pt-3 h-100">
-                  <div className="p-4">
-                    <i className="fa fa-3x fa-concierge-bell text-primary mb-4"></i>
-                    <h5>24/7 Reception</h5>
-                    <p>Our friendly staff is available round the clock to assist you with any needs or travel arrangements.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                <div className="service-item rounded pt-3 h-100">
-                  <div className="p-4">
-                    <i className="fa fa-3x fa-shield-alt text-primary mb-4"></i>
-                    <h5>Safe & Secure</h5>
-                    <p>Your safety is our priority with secure lockers, CCTV surveillance, and well-lit common areas.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src="/img/General/CKC03844-HDR.jpg"
+              alt="Storica Stays heritage property"
+              className="col-span-2 h-64 w-full rounded-2xl object-cover"
+            />
+            <img
+              src="/img/General/CKC03886-HDR.jpg"
+              alt="Rooftop restaurant view"
+              className="h-40 w-full rounded-2xl object-cover"
+            />
+            <img
+              src="/img/General/CKC03983-HDR.jpg"
+              alt="Heritage architecture"
+              className="h-40 w-full rounded-2xl object-cover"
+            />
           </div>
-        </div>
-        {/* Features End */}
-
-
+        </Container>
       </div>
+
+      {/* Features */}
+      <div className="py-20 sm:py-28 bg-sand-50">
+        <Container>
+          <SectionHeading
+            eyebrow="Our Features"
+            title={<>Why Choose <span className="text-primary-600">Storica Stays</span></>}
+          />
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {FEATURES.map(({ icon: Icon, title, description }) => (
+              <Card key={title} className="p-6">
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-50 text-primary-600">
+                  <Icon size={22} />
+                </span>
+                <h3 className="mt-4 font-display text-lg text-ink-900">{title}</h3>
+                <p className="mt-2 font-sans text-sm text-sand-600 leading-relaxed">{description}</p>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </div>
+    </div>
   );
 }

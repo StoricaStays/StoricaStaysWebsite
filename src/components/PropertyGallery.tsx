@@ -84,7 +84,7 @@ const PropertyGallery = forwardRef<PropertyGalleryRef, PropertyGalleryProps>(
     return (
       <>
         {/* Hidden Property Gallery for LightGallery */}
-        <div ref={propertyGalleryRef} className="d-none">
+        <div ref={propertyGalleryRef} className="hidden">
           {propertyImages.map((image) => (
             <a key={image} href={image} data-sub-html="Storica Stays - Property Gallery">
               <img src={image} alt="Storica Stays property" />
