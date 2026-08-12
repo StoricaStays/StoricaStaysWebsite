@@ -1,52 +1,39 @@
 import RoomCard from './RoomCard';
+import SectionHeading from './SectionHeading';
 import { Room, jodhpurRooms } from '../data/rooms';
 
 interface RoomsSectionProps {
-  // Optional props for customization
   rooms?: Room[];
   title?: string;
   subtitle?: string;
+  lead?: string;
   sectionId?: string;
   showPhone?: boolean;
   phone?: string;
-  containerClass?: string;
-  wow?: boolean;
-  wowDelay?: string;
+  sectionClass?: string;
   roomsLink?: string;
 }
 
 export default function RoomsSection({
   rooms = jodhpurRooms,
-  title = "Our Rooms",
+  title = "Jodhpur Rooms",
   subtitle = "Explore Our Rooms",
-  sectionId = "Rooms",
+  lead,
+  sectionId = "rooms",
   showPhone = true,
   phone = "+91 6378365775",
-  containerClass = "container-xxl py-5",
-  wow = true,
-  wowDelay = "0.1s",
-  roomsLink = ""
-}: RoomsSectionProps = {}) {
+  sectionClass = "",
+  roomsLink = "",
+}: RoomsSectionProps) {
   return (
     <>
-      {/* Room Start */}
-      <div className={containerClass} id={sectionId}>
+      <section className={`section ${sectionClass}`} id={sectionId}>
         <div className="container">
-          <div className={`text-center ${wow ? 'wow fadeInUp' : ''}`} data-wow-delay={wowDelay}>
-            <h6 className="section-title text-center text-primary text-uppercase">
-              {title}
-            </h6>
-            <h1 className="mb-5">
-              {subtitle.split(' ').slice(0, -1).join(' ')}{' '}
-              <span className="text-primary text-uppercase">
-                {subtitle.split(' ').slice(-1)[0]}
-              </span>
-            </h1>
-          </div>
-          <div className="row g-4">
+          <SectionHeading eyebrow={title} title={subtitle} lead={lead} align="center" />
+          <div className="row g-4 mt-1">
             {rooms.map((room: Room) => (
               <RoomCard
-                key={room.id}
+                key={room.id + room.title}
                 title={room.title}
                 image={room.image}
                 alt={room.alt}
@@ -59,19 +46,13 @@ export default function RoomsSection({
             ))}
           </div>
         </div>
-      </div>
-      {/* Room End */}
+      </section>
       {roomsLink && (
-        <>
-        <div className="text-center mt-4">
-          <a href={roomsLink} className="btn btn-primary py-3 px-5">
-            Show More Rooms
+        <div className="text-center pb-5">
+          <a href={roomsLink} className="btn-link-flat">
+            View All {title} <i className="fa fa-arrow-right ms-2"></i>
           </a>
         </div>
-        <div className="separator my-5">
-          <hr />
-        </div>
-        </>
       )}
     </>
   );

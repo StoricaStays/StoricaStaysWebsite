@@ -1,13 +1,9 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import '../../public/css/bootstrap.min.css';
+@import '../../public/css/style.css';
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #faf6ef;
+  --foreground: #1a1410;
 }
 
 html,
@@ -19,7 +15,6 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,20 +30,7 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
-.header-carousel{
-  max-height: 800px;
-  overflow: hidden;
-}
-.carousel-hero-image{
-  object-fit: cover;
-  height: 800px;
-
-  @media (max-width: 768px) {
-    height: auto;
-  }
+/* Lightgallery container fix */
+.lg-outer {
+  direction: ltr;
 }
