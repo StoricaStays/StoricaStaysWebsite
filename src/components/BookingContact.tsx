@@ -1,16 +1,18 @@
-'use client';
+"use client";
 
 import { trackPhoneClick, trackWhatsAppClick } from "../utils/gtm";
 
 export default function BookingContact() {
   return (
     <div className="row mt-5">
-      <div className="col-lg-12">
-        <div className="bg-light rounded p-4">
+      <div className="col-12">
+        <div className="ss-rating-band" style={{ borderRadius: "var(--radius-arch)" }}>
           <div className="row align-items-center">
             <div className="col-lg-8">
-              <h5 className="text-primary mb-2">Need Help with Your Booking?</h5>
-              <p className="mb-0">
+              <h4 className="text-white mb-2" style={{ fontFamily: "var(--font-display)" }}>
+                Need help with your booking?
+              </h4>
+              <p className="text-white mb-0" style={{ opacity: 0.85 }}>
                 Our team is available to assist you with any questions about your reservation.
                 Call us directly or send us a message on WhatsApp.
               </p>
@@ -19,22 +21,22 @@ export default function BookingContact() {
               <div className="d-flex gap-3 justify-content-lg-end justify-content-center mt-3 mt-lg-0">
                 <a
                   href="tel:+916378365775"
-                  className="btn btn-primary btn-lg"
+                  className="ss-btn ss-btn-saffron"
                   title="Call Us"
                   onClick={() => trackPhoneClick("+916378365775", "booking_page")}
                 >
-                  <i className="fa fa-phone-alt me-2"></i>
+                  <i className="fa fa-phone-alt me-2" />
                   Call Now
                 </a>
                 <a
                   href="https://wa.me/916378365775"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-success btn-lg"
+                  className="ss-btn ss-btn-ghost-light"
                   title="WhatsApp"
                   onClick={() => trackWhatsAppClick("916378365775", "booking_page")}
                 >
-                  <i className="fab fa-whatsapp me-2"></i>
+                  <i className="fab fa-whatsapp me-2" />
                   WhatsApp
                 </a>
               </div>

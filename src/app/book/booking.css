@@ -9,51 +9,52 @@
 
 /* Loading indicator styles */
 #iframe-loader {
-  background: rgba(248, 249, 250, 0.95);
-  border-radius: 12px;
+  background: rgba(250, 246, 238, 0.95);
+  border-radius: var(--radius-lg, 18px);
   padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lift, 0 26px 60px -28px rgba(18, 38, 77, 0.45));
   backdrop-filter: blur(5px);
 }
 
 #iframe-loader .spinner-border {
   border-width: 4px;
   animation: enhanced-spin 1.5s linear infinite;
+  color: var(--indigo-600, #2e5b9e);
 }
 
 #iframe-loader p {
   margin-bottom: 0;
   font-size: 0.9rem;
   font-weight: 500;
-  color: #6c757d;
+  color: var(--ink-muted, #55607a);
 }
 
 /* Enhanced spinner animation */
 @keyframes enhanced-spin {
-  0% { 
-    transform: rotate(0deg) scale(1); 
-    border-color: #0d6efd transparent transparent transparent;
+  0% {
+    transform: rotate(0deg) scale(1);
+    border-color: var(--indigo-600, #2e5b9e) transparent transparent transparent;
   }
-  25% { 
+  25% {
     transform: rotate(90deg) scale(1.05);
-    border-color: #0d6efd #0d6efd transparent transparent;
+    border-color: var(--indigo-600, #2e5b9e) var(--indigo-600, #2e5b9e) transparent transparent;
   }
-  50% { 
-    transform: rotate(180deg) scale(1); 
-    border-color: #0d6efd #0d6efd #0d6efd transparent;
+  50% {
+    transform: rotate(180deg) scale(1);
+    border-color: var(--indigo-600, #2e5b9e) var(--indigo-600, #2e5b9e) var(--indigo-600, #2e5b9e) transparent;
   }
-  75% { 
+  75% {
     transform: rotate(270deg) scale(1.05);
-    border-color: #0d6efd #0d6efd #0d6efd #0d6efd;
+    border-color: var(--indigo-600, #2e5b9e) var(--indigo-600, #2e5b9e) var(--indigo-600, #2e5b9e) var(--indigo-600, #2e5b9e);
   }
-  100% { 
-    transform: rotate(360deg) scale(1); 
-    border-color: #0d6efd transparent transparent transparent;
+  100% {
+    transform: rotate(360deg) scale(1);
+    border-color: var(--indigo-600, #2e5b9e) transparent transparent transparent;
   }
 }
 
 /* Iframe styles */
-.booking-frame-container iframe {
+.ss-booking-frame iframe {
   width: 100%;
   border: none;
   transition: opacity 0.5s ease-in-out;
@@ -61,18 +62,16 @@
 
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
-  .booking-frame-container {
+  .ss-booking-frame {
     margin: 0 -15px;
     border-radius: 0 !important;
-    border-left: none !important;
-    border-right: none !important;
   }
-  
+
   #iframe-loader {
     padding: 1.5rem;
     border-radius: 8px;
   }
-  
+
   #iframe-loader .spinner-border {
     width: 2.5rem !important;
     height: 2.5rem !important;
@@ -80,29 +79,30 @@
 }
 
 /* Booking benefits section */
-.booking-benefits {
-  background: #f8f9fa;
-  border-radius: 8px;
-  padding: 2rem;
-  margin-top: 2rem;
+.booking-benefit {
+  text-align: center;
+  background: var(--sand-50, #fcfaf4);
+  border-radius: var(--radius-lg, 18px);
+  padding: 2rem 1.5rem;
+  height: 100%;
+  border: 1px solid var(--sand-300, #efe6d4);
 }
 
-.booking-benefits .benefit-icon {
-  width: 60px;
-  height: 60px;
-  font-size: 1.5rem;
+.booking-benefit .benefit-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  border-radius: var(--radius-arch, 999px 999px 14px 14px);
+  background: var(--indigo-100, #e8f0f9);
+  color: var(--indigo-600, #2e5b9e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
 }
 
-/* Enhanced mobile experience */
 @media (max-width: 576px) {
-  .booking-benefits {
+  .booking-benefit {
     padding: 1.5rem;
-    margin-top: 1.5rem;
-  }
-  
-  .benefit-icon {
-    width: 50px !important;
-    height: 50px !important;
-    font-size: 1.25rem !important;
   }
 }

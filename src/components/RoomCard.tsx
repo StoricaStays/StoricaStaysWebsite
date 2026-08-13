@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import { trackCallNowClick, trackGalleryOpen } from '../utils/gtm';
+import { useEffect, useRef } from "react";
+import { trackCallNowClick, trackGalleryOpen } from "../utils/gtm";
 
 interface RoomCardProps {
   readonly title: string;
@@ -11,7 +11,8 @@ interface RoomCardProps {
   readonly bathCount: number;
   readonly galleryImages: string[];
   readonly delay: string;
-  readonly phone?: string; // Make phone optional
+  readonly phone?: string;
+  readonly badge?: string;
 }
 
 export default function RoomCard({
@@ -22,17 +23,18 @@ export default function RoomCard({
   bathCount,
   galleryImages,
   delay,
-  phone
+  phone,
+  badge,
 }: RoomCardProps) {
   const galleryRef = useRef<HTMLDivElement>(null);
   const lgInstanceRef = useRef<any>(null); // eslint-disable-line @typescript-eslint/no-explicit-any
 
   useEffect(() => {
     const initLightGallery = async () => {
-      if (typeof window !== 'undefined' && galleryRef.current) {
-        const { default: lightGallery } = await import('lightgallery');
-        const { default: lgThumbnail } = await import('lightgallery/plugins/thumbnail');
-        const { default: lgZoom } = await import('lightgallery/plugins/zoom');
+      if (typeof window !== "undefined" && galleryRef.current) {
+        const { default: lightGallery } = await import("lightgallery");
+        const { default: lgThumbnail } = await import("lightgallery/plugins/thumbnail");
+        const { default: lgZoom } = await import("lightgallery/plugins/zoom");
 
         lgInstanceRef.current = lightGallery(galleryRef.current, {
           plugins: [lgThumbnail, lgZoom],
@@ -61,12 +63,11 @@ export default function RoomCard({
     if (lgInstanceRef.current) {
       lgInstanceRef.current.openGallery(0);
     }
-    // Track gallery open event
-    trackGalleryOpen('room_gallery', title);
+    trackGalleryOpen("room_gallery", title);
   };
+
   return (
     <>
-      {/* Hidden gallery for LightGallery */}
       <div ref={galleryRef} className="d-none">
         {galleryImages.map((image) => (
           <a key={image} href={image} data-sub-html={`${title} - Gallery Image`}>
@@ -75,76 +76,65 @@ export default function RoomCard({
         ))}
       </div>
 
-      <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay={delay}>
-        <div className="room-item shadow rounded overflow-hidden">
-          <div className="position-relative">
-            <img
-            //   className="img-fluid"
-              src={image}
-              alt={alt}
-              width={407}
-              height={305}
-            />
-          </div>
-          <div className="p-4 mt-2">
-            <div className="d-flex justify-content-between mb-3">
-              <h5 className="mb-0">{title}</h5>
-              <div className="ps-2">
-                <small className="fa fa-star text-primary"></small>
-                <small className="fa fa-star text-primary"></small>
-                <small className="fa fa-star text-primary"></small>
-                <small className="fa fa-star text-primary"></small>
-                <small className="fa fa-star text-primary"></small>
-              </div>
+      <div className="col-lg-4 col-md-6 mb-4">
+        <article className="room-card ss-reveal is-visible" style={{ transitionDelay: delay }}>
+          <button
+            type="button"
+            className="room-card-media arch arch-ratio-portrait"
+            onClick={openGallery}
+            aria-label={`View ${title} gallery`}
+          >
+            <img src={image} alt={alt} width={407} height={305} loading="lazy" />
+            {badge ? <span className="room-card-chip">{badge}</span> : null}
+          </button>
+          <div className="room-card-body">
+            <h3 className="room-card-title">{title}</h3>
+            <div className="room-card-meta">
+              <span className="room-chip">
+                <i className="fa fa-bed" /> {bedCount} {bedCount === 1 ? "Bed" : "Beds"}
+              </span>
+              <span className="room-chip">
+                <i className="fa fa-bath" /> {bathCount} Bath
+              </span>
+              <span className="room-chip">
+                <i className="fa fa-wifi" /> WiFi
+              </span>
             </div>
-            <div className="d-flex mb-3">
-              <small className="border-end me-3 pe-3">
-                <i className="fa fa-bed text-primary me-2"></i>{bedCount} Bed
-              </small>
-              <small className="border-end me-3 pe-3">
-                <i className="fa fa-bath text-primary me-2"></i>{bathCount} Bath
-              </small>
-              <small>
-                <i className="fa fa-wifi text-primary me-2"></i>Wifi
-              </small>
-            </div>
-
-            <div className="d-flex justify-content-between">
+            <div className="room-card-actions">
               <button
-                className="btn btn-sm btn-primary rounded py-2 px-4"
                 type="button"
+                className="ss-btn ss-btn-ghost ss-btn-sm"
                 onClick={openGallery}
               >
-                Room Images
+                <i className="fa fa-images" /> Room Images
               </button>
               {phone ? (
                 <a
-                  className="btn btn-sm btn-dark rounded py-2 px-4"
+                  className="ss-btn ss-btn-primary ss-btn-sm"
                   href={`tel:${phone}`}
                   data-gtm-event="call_now_click"
                   data-gtm-room-type={title}
                   data-gtm-phone={phone}
                   onClick={() => {
-                    // Track the call event with GTM
                     trackCallNowClick(title, phone);
                   }}
                 >
-                  Call Now
+                  <i className="fa fa-phone-alt" /> Call to Book
                 </a>
               ) : (
                 <a
-                  className="btn btn-sm btn-dark rounded py-2 px-4"
+                  className="ss-btn ss-btn-primary ss-btn-sm"
                   href="/book"
                   data-gtm-event="booking_click"
                   data-gtm-room-type={title}
                   data-gtm-source="room_card"
                 >
-                  Book Now
+                  <i className="fa fa-book" /> Book Now
                 </a>
               )}
             </div>
           </div>
-        </div>
+        </article>
       </div>
     </>
   );

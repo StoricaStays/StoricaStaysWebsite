@@ -23,9 +23,6 @@ export default function AsyncCSS() {
       }, 100);
     };
 
-    // Load Google Fonts first (most critical)
-    loadCSS('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
-
     // Load icon fonts
     setTimeout(() => {
       loadCSS('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css');

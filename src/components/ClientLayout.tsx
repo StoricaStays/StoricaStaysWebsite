@@ -1,219 +1,296 @@
-'use client';
+"use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { trackPhoneClick, trackWhatsAppClick, trackEmailClick, trackSocialClick } from "../utils/gtm";
+import { usePathname } from "next/navigation";
+import Marquee from "./Marquee";
+import {
+  trackPhoneClick,
+  trackWhatsAppClick,
+  trackEmailClick,
+  trackSocialClick,
+} from "../utils/gtm";
+
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "The Story", href: "/about" },
+  { label: "Jodhpur", href: "/jodhpur" },
+  { label: "Udaipur", href: "/udaipur" },
+  { label: "The Folio", href: "/#Rooms" },
+  { label: "Contact", href: "/#Contact" },
+];
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  const isActive = (href: string) => {
+    if (href.includes("#")) return false;
+    return pathname === href;
+  };
+
   return (
     <>
-      {/* Header Start */}
-      <div className="container-fluid bg-dark px-0">
-        <div className="row gx-0">
-          <div className="col-lg-3 bg-dark d-none d-lg-block">
-            <Link
-              href="/"
-              className="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center"
-            >
-              <h2 className="m-0 text-primary">Storica Stays</h2>
+      <div className="ss-nav">
+        <Marquee
+          items={[
+            "Rooftop dining under the stars",
+            "Heritage stays in Jodhpur & Udaipur",
+            "Free breakfast on direct bookings",
+            "Fort & lake views from every rooftop",
+          ]}
+        />
+
+        <nav className={`ss-navbar ${scrolled ? "is-scrolled" : ""}`} aria-label="Primary">
+          <div className="container ss-navbar-inner">
+            <Link href="/" className="ss-brand" aria-label="Storica Stays home">
+              <span className="ss-brand-mark" aria-hidden="true">
+                S
+              </span>
+              <span>
+                <span className="ss-brand-name">Storica</span>
+                <span className="ss-brand-sub">Stays · Heritage</span>
+              </span>
             </Link>
-          </div>
-          <div className="col-lg-9">
-            <div className="row gx-0 bg-white d-none d-lg-flex">
-              <div className="col-lg-7 px-5 text-start">
-                <div className="h-100 d-inline-flex align-items-center py-2 me-4">
-                  <i className="fa fa-envelope text-primary me-2"></i>
-                  <p className="mb-0">
-                    <a 
-                      href="mailto:info@storicastays.com"
-                      onClick={() => trackEmailClick("info@storicastays.com", "header")}
-                    >
-                      info@storicastays.com
-                    </a>
-                  </p>
-                </div>
-                <div className="h-100 d-inline-flex align-items-center py-2">
-                  <i className="fa fa-phone-alt text-primary me-2"></i>
-                  <p className="mb-0">
-                    <a 
-                      href="tel:+91 6378365775"
-                      onClick={() => trackPhoneClick("9163xxxxx775", "header")}
-                    >
-                      +91 6378365775
-                    </a>
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-5 px-5 text-end">
-                <div className="d-inline-flex align-items-center py-2">
-                  <a
-                    className="me-3"
-                    href="https://www.instagram.com/storicastays"
-                    title="Instagram"
-                    onClick={() => trackSocialClick("instagram", "header")}
-                  >
-                    <i className="fab fa-instagram"></i>
-                  </a>
-                  <a 
-                    href="https://wa.me/916378365775" 
-                    title="WhatsApp"
-                    onClick={() => trackWhatsAppClick("9163xxxxx775", "header")}
-                  >
-                    <i className="fab fa-whatsapp"></i>
-                  </a>
-                </div>
-              </div>
+
+            <div className="ss-nav-links">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`ss-nav-link ${isActive(link.href) ? "is-active" : ""}`}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
-            <nav className="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
-              <Link href="/" className="navbar-brand d-block d-lg-none">
-                <h1 className="m-0 text-primary text-uppercase">Storica Stays</h1>
+
+            <div className="ss-nav-cta d-flex align-items-center gap-3">
+              <Link
+                href="/book"
+                className="ss-btn ss-btn-primary ss-btn-sm"
+                data-gtm-event="booking_click"
+                data-gtm-source="navbar"
+              >
+                Book a Stay
               </Link>
               <button
                 type="button"
-                className="navbar-toggler"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarCollapse"
+                className={`ss-burger ${menuOpen ? "is-open" : ""}`}
+                aria-label={menuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={menuOpen}
+                onClick={() => setMenuOpen((v) => !v)}
               >
-                <span className="navbar-toggler-icon"></span>
+                <span />
+                <span />
+                <span />
               </button>
-              <div
-                className="collapse navbar-collapse justify-content-between"
-                id="navbarCollapse"
-              >
-                <div className="navbar-nav mr-auto py-0">
-                  <Link href="/" className="nav-item nav-link">Home</Link>
-                  <Link href="/about" className="nav-item nav-link">About</Link>
-                  <Link href="/jodhpur" className="nav-item nav-link">Jodhpur</Link>
-                  <Link href="/udaipur" className="nav-item nav-link">Udaipur</Link>
-                  <Link href="/book" className="nav-item nav-link">Book Now</Link>
-                  <Link href="/#Contact" className="nav-item nav-link">Contact</Link>
-                </div>
-              </div>
-            </nav>
+            </div>
+          </div>
+        </nav>
+
+        <div className={`ss-drawer ${menuOpen ? "is-open" : ""}`} role="dialog" aria-modal="true">
+          <button
+            type="button"
+            className="ss-drawer-close"
+            aria-label="Close menu"
+            onClick={() => setMenuOpen(false)}
+          >
+            ✕
+          </button>
+          {navLinks.map((link, i) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="ss-drawer-link"
+              style={{ transitionDelay: menuOpen ? `${120 + i * 60}ms` : "0ms" }}
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.label}
+              <small>0{i + 1}</small>
+            </Link>
+          ))}
+          <div className="ss-drawer-foot">
+            <a href="mailto:info@storicastays.com">info@storicastays.com</a>
+            <span className="mx-2">·</span>
+            <a href="tel:+916378365775">+91 63783 65775</a>
           </div>
         </div>
       </div>
-      {/* Header End */}
 
       {children}
 
-      {/* Footer Start */}
-      <div
-        className="container-fluid bg-dark text-light footer wow fadeIn"
-        data-wow-delay="0.1s"
-      >
-        <div className="container pb-5">
-          <div className="row g-5">
-            <div className="col-md-6 col-lg-4">
-              <div className="bg-primary rounded p-4">
-                <Link href="/"><h1 className="text-white text-uppercase mb-3">Storica Stays</h1></Link>
-                <p className="text-white mb-0">
-                  Experience the heritage and hospitality of Jodhpur and Udaipur at Storica Stays.
-                  Your gateway to the Blue City&apos;s rich culture and history.
-                </p>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <h6
-                className="section-title text-start text-primary text-uppercase mb-4"
-              >
-                Contact
-              </h6>
-              <p className="mb-2">
-                <i className="fa fa-map-marker-alt me-3"></i>
-                Jodhpur and Udaipur, Rajasthan
+      <footer className="ss-footer">
+        <div className="container ss-footer-inner">
+          <div className="ss-footer-grid">
+            <div className="ss-footer-about">
+              <Link href="/" className="ss-brand">
+                <span className="ss-brand-mark" aria-hidden="true">
+                  S
+                </span>
+                <span>
+                  <span className="ss-brand-name" style={{ color: "#fff" }}>
+                    Storica
+                  </span>
+                  <span className="ss-brand-sub">Stays · Heritage</span>
+                </span>
+              </Link>
+              <p>
+                Heritage boutique stays in the Blue City of Jodhpur and the City of Lakes,
+                Udaipur. Sleep inside history — with rooftop dining over forts and lakes.
               </p>
-              <p className="mb-2">
-                <i className="fa fa-phone-alt me-3"></i>
-                <a 
-                  href="tel:+91 6378365775"
-                  onClick={() => trackPhoneClick("9163xxxxx775", "footer")}
-                >
-                  +91 6378365775
-                </a>
-              </p>
-              <p className="mb-2">
-                <i className="fa fa-envelope me-3"></i>
-                <a 
-                  href="mailto:info@storicastays.com"
-                  onClick={() => trackEmailClick("info@storicastays.com", "footer")}
-                >
-                  info@storicastays.com
-                </a>
-              </p>
-              <div className="d-flex pt-2 gap-2">
+              <div className="ss-footer-socials">
                 <a
-                  className="btn btn-outline-light btn-social"
                   href="https://www.instagram.com/storicastays"
+                  title="Instagram"
+                  aria-label="Instagram"
                   onClick={() => trackSocialClick("instagram", "footer")}
-                ><i className="fab fa-instagram"></i></a>
+                >
+                  <i className="fab fa-instagram" />
+                </a>
                 <a
-                  className="btn btn-outline-light btn-social"
                   href="https://wa.me/916378365775"
+                  title="WhatsApp"
+                  aria-label="WhatsApp"
                   onClick={() => trackWhatsAppClick("9163xxxxx775", "footer")}
-                ><i className="fab fa-whatsapp"></i></a>
+                >
+                  <i className="fab fa-whatsapp" />
+                </a>
               </div>
             </div>
-            <div className="col-lg-5 col-md-12">
-              <div className="row gy-5 g-4">
-                <div className="col-md-6">
-                  <h6
-                    className="section-title text-start text-primary text-uppercase mb-4"
-                  >
-                    Company
-                  </h6>
-                  <Link className="btn btn-link" href="/about">About Us</Link>
-                  <Link className="btn btn-link" href="/#Contact">Contact Us</Link>
-                </div>
-                <div className="col-md-6">
-                  <h6
-                    className="section-title text-start text-primary text-uppercase mb-4"
-                  >
-                    Services
-                  </h6>
-                  <a className="btn btn-link" href="">Food & Restaurant</a>
-                  <a className="btn btn-link" href="">Event & Party</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="container">
-          <div className="copyright">
-            <div className="row">
-              <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                &copy; <a className="border-bottom" href="#">Storica Stays</a>, All
-                Right Reserved.
-              </div>
-              <div className="col-md-6 text-center text-md-end">
-                Designed by <a className="border-bottom" href="#">Storica Team</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Footer End */}
 
-      {/* Floating Action Buttons */}
-      <div className="fixed-bottom d-flex justify-content-end m-3">
-        <div className="d-flex flex-column gap-2">
-          <a
-            href="https://wa.me/916378365775"
-            target="_blank"
-            className="btn btn-success btn-lg rounded-circle"
-            title="Chat on WhatsApp"
-            onClick={() => trackWhatsAppClick("9163xxxxx775", "floating")}
-          >
-            <i className="fab fa-whatsapp"></i>
-          </a>
-          <a
-            href="tel:+916378365775"
-            className="btn btn-primary btn-lg rounded-circle"
-            title="Call Us"
-            onClick={() => trackPhoneClick("+9163xxxxx775", "floating")}
-          >
-            <i className="fa fa-phone-alt"></i>
-          </a>
+            <div>
+              <h6 className="ss-footer-h">Explore</h6>
+              <Link className="ss-footer-link" href="/about">
+                The Story
+              </Link>
+              <Link className="ss-footer-link" href="/jodhpur">
+                Jodhpur
+              </Link>
+              <Link className="ss-footer-link" href="/udaipur">
+                Udaipur
+              </Link>
+              <Link className="ss-footer-link" href="/#Rooms">
+                The Folio
+              </Link>
+              <Link className="ss-footer-link" href="/book">
+                Book a Stay
+              </Link>
+            </div>
+
+            <div>
+              <h6 className="ss-footer-h">Reach Us</h6>
+              <ul className="ss-footer-contact list-unstyled">
+                <li>
+                  <i className="fa fa-map-marker-alt" />
+                  <span>
+                    Jodhpur &amp; Udaipur,
+                    <br />
+                    Rajasthan, India
+                  </span>
+                </li>
+                <li>
+                  <i className="fa fa-phone-alt" />
+                  <a
+                    href="tel:+916378365775"
+                    onClick={() => trackPhoneClick("9163xxxxx775", "footer")}
+                  >
+                    +91 63783 65775
+                  </a>
+                </li>
+                <li>
+                  <i className="fa fa-envelope" />
+                  <a
+                    href="mailto:info@storicastays.com"
+                    onClick={() => trackEmailClick("info@storicastays.com", "footer")}
+                  >
+                    info@storicastays.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h6 className="ss-footer-h">Two Cities</h6>
+              <div className="ss-footer-city">
+                <span className="city-pin">
+                  <i className="fa fa-fort-awesome" />
+                </span>
+                <div>
+                  <b>Jodhpur</b>
+                  <small>26.298° N · 73.020° E</small>
+                </div>
+              </div>
+              <div className="ss-footer-city">
+                <span className="city-pin">
+                  <i className="fa fa-water" />
+                </span>
+                <div>
+                  <b>Udaipur</b>
+                  <small>24.580° N · 73.679° E</small>
+                </div>
+              </div>
+              <div className="ss-footer-city">
+                <span className="city-pin">
+                  <i className="fa fa-utensils" />
+                </span>
+                <div>
+                  <b>Rooftop Dining</b>
+                  <small>Fort &amp; lake views</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="ss-footer-bottom">
+            <span>
+              © {new Date().getFullYear()}{" "}
+              <Link href="/">Storica Stays</Link>, All Rights Reserved.
+            </span>
+            <span>
+              Crafted with <i className="fa fa-heart" style={{ color: "var(--terracotta)" }} /> in
+              Rajasthan
+            </span>
+          </div>
         </div>
+      </footer>
+
+      <div className="ss-float">
+        <a
+          href="https://wa.me/916378365775"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ss-float-btn ss-float-btn--whatsapp"
+          title="Chat on WhatsApp"
+          aria-label="Chat on WhatsApp"
+          onClick={() => trackWhatsAppClick("9163xxxxx775", "floating")}
+        >
+          <i className="fab fa-whatsapp" />
+        </a>
+        <a
+          href="tel:+916378365775"
+          className="ss-float-btn ss-float-btn--call"
+          title="Call Us"
+          aria-label="Call Us"
+          onClick={() => trackPhoneClick("+9163xxxxx775", "floating")}
+        >
+          <i className="fa fa-phone-alt" />
+        </a>
       </div>
     </>
   );

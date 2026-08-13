@@ -1,78 +1,70 @@
-import RoomCard from './RoomCard';
-import { Room, jodhpurRooms } from '../data/rooms';
+import RoomCard from "./RoomCard";
+import SectionHeading from "./SectionHeading";
+import { Room, jodhpurRooms } from "../data/rooms";
 
 interface RoomsSectionProps {
-  // Optional props for customization
   rooms?: Room[];
   title?: string;
   subtitle?: string;
+  sub?: string;
   sectionId?: string;
   showPhone?: boolean;
   phone?: string;
   containerClass?: string;
-  wow?: boolean;
-  wowDelay?: string;
   roomsLink?: string;
+  badge?: string;
 }
 
 export default function RoomsSection({
   rooms = jodhpurRooms,
   title = "Our Rooms",
   subtitle = "Explore Our Rooms",
+  sub = "A folio of heritage spaces — from cosy dorms to lake-view suites, every room keeps the story of the haveli alive.",
   sectionId = "Rooms",
   showPhone = true,
   phone = "+91 6378365775",
-  containerClass = "container-xxl py-5",
-  wow = true,
-  wowDelay = "0.1s",
-  roomsLink = ""
+  containerClass = "ss-section",
+  roomsLink = "",
+  badge,
 }: RoomsSectionProps = {}) {
   return (
-    <>
-      {/* Room Start */}
-      <div className={containerClass} id={sectionId}>
-        <div className="container">
-          <div className={`text-center ${wow ? 'wow fadeInUp' : ''}`} data-wow-delay={wowDelay}>
-            <h6 className="section-title text-center text-primary text-uppercase">
-              {title}
-            </h6>
-            <h1 className="mb-5">
-              {subtitle.split(' ').slice(0, -1).join(' ')}{' '}
-              <span className="text-primary text-uppercase">
-                {subtitle.split(' ').slice(-1)[0]}
-              </span>
-            </h1>
-          </div>
-          <div className="row g-4">
-            {rooms.map((room: Room) => (
-              <RoomCard
-                key={room.id}
-                title={room.title}
-                image={room.image}
-                alt={room.alt}
-                bedCount={room.bedCount}
-                bathCount={room.bathCount}
-                galleryImages={room.galleryImages}
-                delay={room.delay}
-                phone={showPhone ? phone : undefined}
-              />
-            ))}
-          </div>
+    <section className={containerClass} id={sectionId}>
+      <div className="container">
+        <SectionHeading
+          center
+          eyebrow={title}
+          title={
+            <>
+              {subtitle.split(" ").slice(0, -1).join(" ")}{" "}
+              <em>{subtitle.split(" ").slice(-1)[0]}</em>
+            </>
+          }
+          sub={sub}
+        />
+        <div className="row g-4 ss-room-grid">
+          {rooms.map((room: Room) => (
+            <RoomCard
+              key={room.id}
+              title={room.title}
+              image={room.image}
+              alt={room.alt}
+              bedCount={room.bedCount}
+              bathCount={room.bathCount}
+              galleryImages={room.galleryImages}
+              delay={room.delay}
+              phone={showPhone ? phone : undefined}
+              badge={badge}
+            />
+          ))}
         </div>
+        {roomsLink ? (
+          <div className="text-center mt-5">
+            <a href={roomsLink} className="ss-btn ss-btn-ghost">
+              View all rooms <i className="fa fa-arrow-right" />
+            </a>
+          </div>
+        ) : null}
       </div>
-      {/* Room End */}
-      {roomsLink && (
-        <>
-        <div className="text-center mt-4">
-          <a href={roomsLink} className="btn btn-primary py-3 px-5">
-            Show More Rooms
-          </a>
-        </div>
-        <div className="separator my-5">
-          <hr />
-        </div>
-        </>
-      )}
-    </>
+    </section>
   );
 }

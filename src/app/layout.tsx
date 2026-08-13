@@ -1,24 +1,30 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
 import Scripts from "../components/Scripts";
 import AsyncCSS from "../components/AsyncCSS";
 import PerformanceOptimizer from "../components/PerformanceOptimizer";
 import ClientLayout from "../components/ClientLayout";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Storica Stays - Heritage Boutique Comfort and Rooftop Restaurant",
-  description: "Experience the charm of heritage at Storica Stays, your ideal Stay and rooftop restaurant.",
+  title: "Storica Stays — Heritage Stays & Rooftop Dining in Jodhpur & Udaipur",
+  description:
+    "Heritage boutique stays in the Blue City of Jodhpur and the City of Lakes, Udaipur. Sleep inside history — rooftop dining with fort & lake views.",
+  keywords: ["Storica Stays", "heritage hostel Jodhpur", "heritage hotel Udaipur", "rooftop restaurant Jodhpur", "lake view rooms Udaipur"],
 };
 
 export default function RootLayout({
@@ -52,7 +58,7 @@ export default function RootLayout({
         <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.9.0-beta.1/css/lg-thumbnail.css" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.9.0-beta.1/css/lg-zoom.css" rel="stylesheet" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${fraunces.variable} ${manrope.variable}`}>
         <Scripts />
         <AsyncCSS />
         <PerformanceOptimizer />
